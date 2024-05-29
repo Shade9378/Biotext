@@ -1,0 +1,15 @@
+To run the code, go to TERMINAL and type "npm run serve".
+To terminate the program, type ctrl+c.
+
+This program uses a JavaScript library, Vue.js.
+You need to download node.js to open this web project. -> See "https://vuejs.org/guide/quick-start"
+DePauw professors use Vue.js to teach the CS-300-level Web Programming class, so if you face any problems,
+I recommend reaching out to professor Stewart.
+
+Breif description of each file:
+1. HomeView: It is an empty View file. You can add a new unit here, import this in the router, and make it accessible through the dropdown menu.
+2. UnitView: Embeds either of the components: "Element2Wide.vue" or "Element3Narrow.vue."
+3. Two component files: I put two components with different style sheets. The content is both Unit 1.
+4. "index.js": It is a router that is used in App.vue.
+5. App.vue: contains the header and router links in a dropdown menu format.
+6. "main.js": This imports the stylesheet called bootstrap. Bootstrap is used in the dropdown menu. Bootstrap has lots of templates, so definitely check it out! -> Navigation bar templates for example: https://getbootstrap.com/docs/4.0/components/navbar/
