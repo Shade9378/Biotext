@@ -18,16 +18,16 @@
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
         </div>
-        <p style="color:aliceblue; font-size: 20px;">
+        <p style="color:aliceblue; font-size: 20px;" >
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide">
+        <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
             <div class="page" id="page">
-                <p>Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
+                <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotligh-<br>ts highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
                 <p>
-                    Deena Walker is a scientist who studies the molecular mechanism of addiction and depression. 
+                    Deena Walker is a scientist who studies the molecular mechani-<br>sm of addiction and depression. 
                     She found that mice who were raised in social isolation showed higher levels of anxiety than mice 
                     raised in groups. These mice also had different levels of the neurotransmitters dopamine and serotonin 
                     than mice raised in groups.
@@ -38,13 +38,13 @@
                     she wanted to explore how genes vs. environment affect susceptibility to anxiety and depression.
                 </p>
                 <p>
-                    Dopamine and serotonin both play a role in anxiety and depression, although scientists are still trying 
+                    Dopamine and serotonin both play a role in anxiety and depres-<br>sion, although scientists are still trying 
                     to figure out the details of how they do this. We will discuss the structures of these neurotransmitters 
                     over the next few classes. But first, we must learn about bonding and structural representations of molecules.
                 </p>
-
+                
             </div>
-            <div class="page" id="page">
+            <div class="page" id="page" style="font-family: 'Times New Roman', Times, serif;">
                 <div>
                     <h6>
                         Deena did a podcast describing her motivation for her research:
@@ -52,25 +52,25 @@
                     <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
                     <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
                     width="70%"></iframe>
-                    <p>
+                    <p style="margin: 10px;">
                         When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
                     </p>
-                    <p>
+                    <p style="margin: 10px; font-size: small;">
                         Deena Walker is a postdoctoral fellow at Mt. Sinai School of Medicine where she studies the molecular mechanisms of addiction and depression. She recently moved to New York after finishing her PhD at The University of Texas at Austin in December 2012. When she's not in lab she enjoys practicing yoga and playing fetch with her dog in Central Park.
                     </p>
                 </div>
-            </div>
-            <div class="page" id="page">
-                <h4>What we will learn in this unit:</h4>
-                <p>
-                    <ul>
+                <p style="font-size: 15px" >
+                    <strong>What we will learn in this unit:</strong>
+                    <ul list-style: disc outside none>
                         <li>Common bonding patterns in organic compounds.</li>
                         <li>Drawing Lewis structures.</li>
                         <li>Drawing condensed structures.</li>
                     </ul>
                 </p>
-                <h4>Learning Goal:</h4>
+                <p style="font-size: 15px; margin-bottom: 5px;"><strong>Learning Goal:</strong></p>
                 <textarea placeholder="Enter what you expect to learn from this course."/>
+            </div>
+            <div class="page" id="page">
                 <h4>Bonding</h4>
                 <p>
                     Atoms are made of a nucleus that contains protons and neutrons and orbiting around that nucleus are electrons. 
@@ -217,6 +217,7 @@
 import { TresCanvas } from '@tresjs/core'
 
 export default{
+    
     data(){
         return{
             count: 0,
@@ -228,6 +229,7 @@ export default{
         //var slide = setInterval(()=>this.slideLoop(this.direction),2000)
         window.addEventListener('scroll', this.handleScroll);
     },
+
     methods:{
         ////playVideo() invokes the overlay area that has a video on top of it.
         playVideo(){
@@ -263,6 +265,7 @@ export default{
             this.scroll("previous")
             this.handleScroll()
         },
+
         next() {
             if(this.count < 5 && this.count >= 0){
                 this.count++
@@ -270,6 +273,7 @@ export default{
             this.scroll("next")
             this.handleScroll()
         },
+
         scroll(position) {
             let el = document.getElementById("slide");
             let width = document.getElementById("container").offsetWidth/2;
@@ -286,19 +290,36 @@ export default{
                 else {
                     pos += 5; 
                     if(position == 'next'){
-                        el.scrollLeft += 10
+                        el.scrollLeft += 11
                     }
                     else{
-                        el.scrollLeft -= 10
+                        el.scrollLeft -= 11
                     }
                 }
             }
         },
+
         resetScroll(){
             this.count = 0
             this.direction = "forward"
             this.scroll("reset")
-        }
+        },
+
+        touchStartMethod (touchEvent) {
+            
+            const posXStart = touchEvent.clientX;
+            addEventListener('mousedown', (touchEvent) => this.touchEndMethod(touchEvent, posXStart), {once: true});
+            console.log(posXStart);
+        },
+
+        touchEndMethod (touchEvent, posXStart) {
+            const posXEnd = touchEvent.clientX;
+            if (posXStart < posXEnd) {
+                this.next(); // swipe right
+            } else if (posXStart > posXEnd) {
+                this.previous(); // swipe left
+            }
+        } 
     }
 }
 </script>
@@ -344,11 +365,12 @@ nav a.router-link-exact-active {
   display:none;
 }
 #slide {
+  width: 107%;
   display: flex;
   overflow: hidden;
   align-items: flex-start;
   text-indent: 2%;
-  height:100%;
+  height: 600px;
 }
 .container {
   width: 100%;
@@ -393,6 +415,7 @@ nav a.router-link-exact-active {
 }
 #page {
     min-height:100%;
+    height: 100%;
 }
 #slide > div > img {
   display: block;
@@ -425,13 +448,12 @@ nav a.router-link-exact-active {
     opacity: 0.5;
 }
 #slide > div > textarea{
-    margin-left:2%;
-    width:80%;
-    height:40%;
-    margin-bottom:2%;
+    margin: 0 4% 4% 4%;
+    width:95%;
+    height:10%;
 }
 .progress-container {
-  width: 100%;
+  width: 107%;
   height: 1%;
   background: #cccccc;
   margin:0;
@@ -443,4 +465,12 @@ nav a.router-link-exact-active {
   min-width:0%;
   max-width:100%;
 }
+
+#slide > .page > p {
+    margin: 12.5px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify
+}
+
 </style>

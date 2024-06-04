@@ -1,15 +1,17 @@
 <template>
   <!--+ and - button changes the font size, width, and height of the overall format.-->
-  <div class="sizeButtons">
-    <button @click="changeToWide()">+</button>
-    <button @click="changeToNarrow()">-</button>
-  </div>
+  <div class="background">
+    <div class="sizeButtons">
+      <button @click="changeToWide()">+</button>
+      <button @click="changeToNarrow()">-</button>
+    </div>
     
-  <div class="home" v-if=wide>
-    <Element2Wide/>
-  </div>
-  <div class="home" v-if=narrow>
-    <Element3Narrow/>
+    <div class="home" v-if=wide>
+      <Element2Wide/>
+    </div>
+    <div class="home" v-if=narrow>
+      <Element3Narrow/>
+    </div>
   </div>
 </template>
 
@@ -18,7 +20,7 @@
 import Element2Wide from '@/components/Element2Wide.vue'
 import Element3Narrow from '@/components/Element3Narrow.vue'
 
-export default {
+export default { 
   name: 'Unit1View',
   components: {
     Element2Wide,
@@ -48,5 +50,9 @@ export default {
   margin-right:0px;
   margin-left:auto;
   width:60px;
+}
+
+.background{
+  height:770px;
 }
 </style>
