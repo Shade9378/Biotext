@@ -23,11 +23,11 @@
         </p>
         <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
             <div class="page" id="page">
-                <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotligh-<br>ts highlighting scientists 
+                <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
                 <p>
-                    Deena Walker is a scientist who studies the molecular mechani-<br>sm of addiction and depression. 
+                    Deena Walker is a scientist who studies the molecular mechanism of addiction and depression. 
                     She found that mice who were raised in social isolation showed higher levels of anxiety than mice 
                     raised in groups. These mice also had different levels of the neurotransmitters dopamine and serotonin 
                     than mice raised in groups.
@@ -38,7 +38,7 @@
                     she wanted to explore how genes vs. environment affect susceptibility to anxiety and depression.
                 </p>
                 <p>
-                    Dopamine and serotonin both play a role in anxiety and depres-<br>sion, although scientists are still trying 
+                    Dopamine and serotonin both play a role in anxiety and depression, although scientists are still trying 
                     to figure out the details of how they do this. We will discuss the structures of these neurotransmitters 
                     over the next few classes. But first, we must learn about bonding and structural representations of molecules.
                 </p>
@@ -71,34 +71,37 @@
                 <textarea placeholder="Enter what you expect to learn from this course."/>
             </div>
             <div class="page" id="page">
-                <h4>Bonding</h4>
+                <p><strong>Bonding</strong></p>
                 <p>
                     Atoms are made of a nucleus that contains protons and neutrons and orbiting around that nucleus are electrons. 
                     The nucleus is very small in volume relative to the overall volume of the atom but contains most of the atoms mass. 
                     The protons in the nucleus are positively charged, the neutrons have no charge, and the electrons have a negative charge. 
                     Atoms combine with each other by making bonds. There are many types of bonds: ionic, covalent, coordinate covalent, metallic, and more. 
                 </p>
-            </div>
-            <div class="page" id="page">
                 <p>
                     In this course we will talk a little about ionic bonding, but our major concern will be covalent bonds. 
                     We won’t really talk about other types of bonds in this course at all.This is an organic chemistry course so we will be learning about compounds made from a limited set of elements. 
                     Since organic chemistry is often defined as the chemistry of carbon compounds, carbon will be central to our studies. Other elements commonly found in organic compounds are 
                     hydrogen, oxygen, nitrogen, and the halogens (fluorine, chlorine, bromine, and iodine). We will also occasionally see sulfur and phosphorous.
                 </p>
-                <div style="height:30%">
-                    <img src="@/assets/Unit1-PeriodicTable.webp" style="width:50%;">
-                    <h6>
-                        Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
-    ​                </h6>
-                </div>
-            </div>
-            <div class="page" id="page">
                 <p>
                     These elements follow specific patterns when they make covalent bonds with each other.
                     For reasons we will understand more fully later, the elements we will be working with 
                     (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
-                    Hydrogen wants to have 2 valence electrons. The atoms start with a certain number of valence electrons. 
+                    Hydrogen wants to have 2 valence electrons. 
+                </p>
+            </div>
+            <div class="page" id="page">
+                <div style="display: flex; justify-content: center; margin-bottom: 27px;">
+                    <div class="elemtal-chart" style="height:54%; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                        <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
+                        <h6 style="font-family: 'Times New Roman', Times, serif;'">
+                            Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
+    ​                    </h6>
+                    </div>
+                </div>
+                <p>
+                    The atoms start with a certain number of valence electrons. 
                     The periodic table tells us (the numbers at the top of the columns) how many electrons each atom starts with. 
                     To get more electrons the atoms share with other atoms to make covalent bonds. 
                     One electron shared from each atom makes a bond between the atoms. So every covalent bond is two electrons shared between two atoms. 
@@ -106,25 +109,30 @@
                 </p>
             </div>
             <div class="page" id="page">
-                <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:100px; float:right">
                 <p>
                     Covalent bonding is like two people sharing a drink. Sharing creates a bond between them. The same is true for atoms sharing electrons. 
                     The sharing holds the atoms together; it bonds them.
                 </p>
-                <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:100px; float:right">
-                <p>
+                <p style="margin-bottom: 30px;">
                     Sometimes when people share they don't share equally. Maybe one is bigger than the other so they take more. This can make the relationship less stable. 
                     The same can be said for bonds. Some atoms attract the shared electrons more than others. Usually this makes for bonds that are more reactive.
                 </p>
-                <div style="width:50%; float:left">
+                <div style="width: 100%; height: 53%;">
                     <h6>Animation: Two people sharing soda?</h6>
                     <div class="hover-container">
-                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:100px;" @click="playVideo()">
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo()">
                     </div>
                 </div>
-                <p>
-                    We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
+            </div>
+            <div class="page" id="page">
+                <p style="margin-bottom: 30px;">
+                    We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. 
+                    This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
+                <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:40%;">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:40%;">
+                </div>
             </div>
             <div class="page" id="page">
                 <p>
@@ -193,7 +201,7 @@
                 <p>empty page</p>
             </div>
         </div>
-        <div class="progress-container">
+        <div class="progress-container" style="margin-left: 50px;">
             <div class="progress-bar" id="myBar"></div>
         </div> 
         <div class="hover-container">
@@ -290,10 +298,10 @@ export default{
                 else {
                     pos += 5; 
                     if(position == 'next'){
-                        el.scrollLeft += 11
+                        el.scrollLeft += 10
                     }
                     else{
-                        el.scrollLeft -= 11
+                        el.scrollLeft -= 10
                     }
                 }
             }
@@ -304,7 +312,7 @@ export default{
             this.direction = "forward"
             this.scroll("reset")
         },
-
+ 
         touchStartMethod (touchEvent) {
             
             const posXStart = touchEvent.clientX;
@@ -365,8 +373,9 @@ nav a.router-link-exact-active {
   display:none;
 }
 #slide {
-  width: 107%;
+  width: 97%;
   display: flex;
+  margin-left: 50px;
   overflow: hidden;
   align-items: flex-start;
   text-indent: 2%;
@@ -418,9 +427,9 @@ nav a.router-link-exact-active {
     height: 100%;
 }
 #slide > div > img {
-  display: block;
   max-width: 50%;
 }
+
 #slide > div > p {
   margin-bottom: 0;
   font-size: 14px;
@@ -453,7 +462,7 @@ nav a.router-link-exact-active {
     height:10%;
 }
 .progress-container {
-  width: 107%;
+  width: 97%;
   height: 1%;
   background: #cccccc;
   margin:0;
