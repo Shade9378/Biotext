@@ -53,6 +53,7 @@ export default {
 }
 
 .background{
-  height:770px;
+  height:100%;
+  min-width: 50%;
 }
 </style>

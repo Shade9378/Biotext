@@ -22,7 +22,7 @@
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
         <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
-            <div class="page" id="page">
+            <div class="page" id="page" style="overflow-y: scroll;">
                 <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
@@ -44,7 +44,7 @@
                 </p>
                 
             </div>
-            <div class="page" id="page" style="font-family: 'Times New Roman', Times, serif;">
+            <div class="page" id="page">
                 <div>
                     <h6>
                         Deena did a podcast describing her motivation for her research:
@@ -133,36 +133,33 @@
                     <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:40%;">
                     <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:40%;">
                 </div>
-            </div>
-            <div class="page" id="page">
-                <p>
+                <p style="margin-top: 30px;">
                     It is possible for two atoms to share more electrons with each other, always in pairs. 
                     We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
                     shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
                     for 6 total). Since for every bond the atom gets an extra electron and each atom wants to 
-                    get a total of 8 valence electrons, the number of bonds each atom makes is 8 minus the number 
-                    of valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
+                    get a total of 8 valence electrons, 
                 </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="width:50%; float:left; margin:1%">
+            </div>
+            <div class="page" id="page">
+                <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
+                    valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
+                </p>
+                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto ">
                 <p>
                     Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                     it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
                     two electrons on each side of the square but start with one electron per side and only pair 
                     them up when we have more than 4 valence electrons. The dot structures show us how we can connect 
                     atoms to make molecules. Every where we have a single electron on a side we can make a bond to another 
-                    atom. When all the 
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p>
-                    atoms have all their single electrons used up the molecule is complete. Usually we 
+                    atom. When all the atoms have all their single electrons used up the molecule is complete. Usually we 
                     represent a bond with a line between the two atoms. A line represents a bond, which is a sharing of 
                     two electrons. On sides where there are two electrons we don’t make a bond. Those electrons are not shared. 
                     Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
                 </p>
             </div>
-            <div id="page">
-                <h4>Representing Structures</h4>
+            <div class="page" id="page">
+                <p><strong>Representing structures</strong></p>
                 <p>
                     There are multiple ways that chemists represent a molecule. We saw the Lewis dot structure or Lewis Structure 
                     (with lines for bonds). Of course, we can also just write a molecular formula. The molecular formula simply 
@@ -177,15 +174,18 @@
                     The Lewis Structure tells us a lot about how the molecule is put together, but when we start working with larger 
                     molecules, let's say with 8 or more carbon atoms, it becomes cumbersome to write out every atom and every bond. 
                 </p>
-            </div>
-            <div class="page" id="page">
                 <p>
                     So chemists have developed ways of writing less while still representing how the atoms are connected. One of 
                     these ways is the condensed structure.
                 </p>
                 <p>
                     None of these ways of representing the molecule (molecular formula, Lewis structure, condensed structure) are completely 
-                    accurate representations. While the Lewis and condensed structures show us how the atoms are connected, they don’t 
+                    accurate representations. While
+                </p>
+            </div>
+            <div class="page" id="page">
+                <p style="text-indent: 0%;">
+                    the Lewis and condensed structures show us how the atoms are connected, they don’t 
                     adequately represent the three-dimensional nature of the molecules, as we saw in the video. One of the skills we need to 
                     develop is translating between the actual three dimensional molecule and the two-dimensional representations we are forced 
                     to use because of the nature of the paper, computer screens, white boards, and other media we use to communicate. We will 
@@ -195,10 +195,6 @@
                 </p>
             </div>
             <div class="page" id="page">
-                <p>empty page</p>
-            </div>
-            <div class="page" id="page">
-                <p>empty page</p>
             </div>
         </div>
         <div class="progress-container" style="margin-left: 50px;">
@@ -262,7 +258,7 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("container").offsetWidth;
-            var scrolled = totalWidth / 5; //6 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
+            var scrolled = totalWidth / 4; //6 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
@@ -301,7 +297,7 @@ export default{
                         el.scrollLeft += 10
                     }
                     else{
-                        el.scrollLeft -= 10
+                        el.scrollLeft -= 9.5
                     }
                 }
             }
@@ -425,6 +421,8 @@ nav a.router-link-exact-active {
 #page {
     min-height:100%;
     height: 100%;
+    font-family: 'Times New Roman', Times, serif; 
+    overflow: scroll !important;
 }
 #slide > div > img {
   max-width: 50%;

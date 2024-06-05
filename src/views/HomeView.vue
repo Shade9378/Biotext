@@ -1,5 +1,5 @@
 <template>
-  <div class="home" style="color:white">
+  <div class="home" style="color:white; height: 100%;">
     <p>Put other componnts here.</p>
     <p></p>
   </div>
@@ -21,7 +21,5 @@
   max-width: 100%;
   height:100%;
 }
-.home{
-  height:500px;
-}
+
 </style>
