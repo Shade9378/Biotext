@@ -422,7 +422,7 @@ nav a.router-link-exact-active {
     min-height:100%;
     height: 100%;
     font-family: 'Times New Roman', Times, serif; 
-    overflow: scroll !important;
+    overflow-y: scroll !important; 
 }
 #slide > div > img {
   max-width: 50%;
