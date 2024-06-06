@@ -22,7 +22,7 @@
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
         <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
-            <div class="page" id="page" style="overflow-y: scroll;">
+            <div class="page" id="page" style="">
                 <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
@@ -42,7 +42,6 @@
                     to figure out the details of how they do this. We will discuss the structures of these neurotransmitters 
                     over the next few classes. But first, we must learn about bonding and structural representations of molecules.
                 </p>
-                
             </div>
             <div class="page" id="page">
                 <div>
@@ -197,7 +196,7 @@
             <div class="page" id="page">
             </div>
         </div>
-        <div class="progress-container" style="margin-left: 50px;">
+        <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
         </div> 
         <div class="hover-container">
@@ -371,18 +370,19 @@ nav a.router-link-exact-active {
 #slide {
   width: 97%;
   display: flex;
-  margin-left: 50px;
   overflow: hidden;
   align-items: flex-start;
   text-indent: 2%;
   height: 600px;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding-bottom: 5%;
   height:100%;
-  margin-left:2%;
-  margin-right:2%;
   padding-right: 0;
   padding-left: 0;
 }
@@ -413,7 +413,6 @@ nav a.router-link-exact-active {
   padding-right: 2%;
   padding-left:2%;
   box-sizing: border-box;
-  overflow: hidden;
   background-color: aliceblue;
   text-align: left;
   margin:0;
@@ -479,5 +478,4 @@ nav a.router-link-exact-active {
     font-family: 'Times New Roman', Times, serif;
     text-align: justify
 }
-
 </style>
