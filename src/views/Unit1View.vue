@@ -53,11 +53,9 @@ export default {
 }
 
 .background{
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
   align-items: center;
+  justify-content: center;
   height:100%;
-  min-width: 50%;
 }
+
 </style>

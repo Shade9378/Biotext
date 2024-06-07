@@ -18,12 +18,13 @@
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
         </div>
-        <p style="color:aliceblue; font-size: 20px;" >
+        <p style="color:aliceblue; font-size: 20px; " >
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
         <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
-            <div class="page" id="page" style="">
-                <p style="margin-top: 27px;">Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
+            <div class="page" id="page">
+                <p style="margin-top: 27px;" >
+                    Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
                 </p>
                 <p>
@@ -199,18 +200,20 @@
         <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
         </div> 
-        <div class="hover-container">
-            <div class="control-left">
-                <p @click="previous" class="prev">
-                    PREVIOUS
-                </p>
+        <div class="nav-buttons">
+            <div class="hover-container">
+                <div class="control-left">
+                    <p @click="previous" class="prev" style="font-size: 35px;">
+                        <
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="hover-container">
-            <div class="control-right">
-                <P @click="next" class="next">
-                    NEXT
-                </P>
+            <div class="hover-container">
+                <div class="control-right" style="font-size: 35px;">
+                    <P @click="next" class="next">
+                        >
+                    </P>
+                </div>
             </div>
         </div>
     </div>
@@ -368,12 +371,12 @@ nav a.router-link-exact-active {
   display:none;
 }
 #slide {
+  height: 600px;
   width: 97%;
   display: flex;
   overflow: hidden;
   align-items: flex-start;
   text-indent: 2%;
-  height: 600px;
 }
 .container {
   display: flex;
@@ -408,7 +411,8 @@ nav a.router-link-exact-active {
   left: 30px;
 }
 #slide > div {
-  width: 50%;
+  min-width: 50%;
+  height: 100%;
   min-height:400px;
   padding-right: 2%;
   padding-left:2%;
@@ -416,21 +420,14 @@ nav a.router-link-exact-active {
   background-color: aliceblue;
   text-align: left;
   margin:0;
+  font-family: 'Times New Roman', Times, serif; 
+  overflow-y: scroll !important; 
 }
-#page {
-    min-height:100%;
-    height: 100%;
-    font-family: 'Times New Roman', Times, serif; 
-    overflow-y: scroll !important; 
-}
+
 #slide > div > img {
   max-width: 50%;
 }
 
-#slide > div > p {
-  margin-bottom: 0;
-  font-size: 14px;
-}
 #slide > div > div {
   padding:2%;
   color: #FFFFFF;
@@ -478,4 +475,12 @@ nav a.router-link-exact-active {
     font-family: 'Times New Roman', Times, serif;
     text-align: justify
 }
+
+
+@media (max-width: 700px) {
+    #slide > div { 
+        min-width: 100%;
+    }
+}
+
 </style>
