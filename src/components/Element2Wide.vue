@@ -285,7 +285,7 @@ export default{
             let width = document.getElementById("container").offsetWidth/2;
             let pos = 0;
             let id = setInterval(frame, 10);
-            let num = 12 - this.frame //put the total number of pages here
+            let num = 10 - this.frame //put the total number of pages here
             //let width = (screen.availWidth-160)*0.5;
             let resize = num * width
             let check = position == "reset" ? resize : width 
@@ -295,14 +295,38 @@ export default{
                 }
                 else {
                     pos += 5; 
-                    if(position == 'next'){
-                        el.scrollLeft += 10
+                    let leftDirection;
+                    let rightDirection;
+                    if (window.screen.width < 600) {
+                        leftDirection = 10;
+                        rightDirection = 10;
+                    }
+                    else if (window.screen.width < 1600) {
+                        leftDirection = 10;
+                        rightDirection = 9.5;
+                    }
+                    else if (window.screen.width <= 1920) {
+                        leftDirection = 12;
+                        rightDirection = 12;
+                    }
+                    else {
+                        leftDirection = 13;
+                        rightDirection = 13;
+                    }
+
+                    if(position == 'next'){  
+                        el.scrollLeft +=  leftDirection
                     }
                     else{
-                        el.scrollLeft -= 9.5
+                        el.scrollLeft -= rightDirection
                     }
                 }
             }
+            console.log(position)
+            console.log(resize)
+            console.log(check)
+            console.log(width);
+            console.log(pos);
         },
 
         resetScroll(){
@@ -473,13 +497,41 @@ nav a.router-link-exact-active {
     margin: 12.5px;
     font-size: 17px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: justify
+    text-align: justify;
 }
 
-
+/*** Media Quiries ***/
 @media (max-width: 700px) {
     #slide > div { 
         min-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #slide {
+        width: 120%;
+    }
+
+    .progress-container {
+        width: 120%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #slide {
+        width: 137%;
+    }
+    .progress-container {
+        width: 137%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    #slide {
+        width: 177%;
+    }
+    .progress-container {
+        width: 177%;
     }
 }
 
