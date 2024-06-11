@@ -1,30 +1,25 @@
 <template>
   <!--+ and - button changes the font size, width, and height of the overall format.-->
   <div class="background">
+    <!---
     <div class="sizeButtons">
       <button @click="changeToWide()">+</button>
       <button @click="changeToNarrow()">-</button>
     </div>
-    
-    <div class="home" v-if=wide>
-      <Element2Wide/>
-    </div>
-    <div class="home" v-if=narrow>
-      <Element3Narrow/>
-    </div>
+    -->
+    <Element2Wide/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Element2Wide from '@/components/Element2Wide.vue'
-import Element3Narrow from '@/components/Element3Narrow.vue'
+import Element2Wide from '@/components/Unit 1/Element2Wide.vue'
+import Element3Narrow from '@/components/Unit 1/Element3Narrow.vue'
 
 export default { 
   name: 'Unit1View',
   components: {
     Element2Wide,
-    Element3Narrow
   },
   data(){
     return{
@@ -32,6 +27,7 @@ export default {
       wide: true
     }
   },
+
   methods:{
     changeToWide(){
       this.wide = true;
@@ -46,12 +42,13 @@ export default {
 </script>
 
 <style scoped>
+/***
 .sizeButtons{
   margin-right:0px;
   margin-left:auto;
   width:60px;
-}
-
+} ***/
+ 
 .background{
   align-items: center;
   justify-content: center;
