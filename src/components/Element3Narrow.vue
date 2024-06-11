@@ -200,18 +200,12 @@
             <div class="progress-bar" id="myBar"></div>
         </div> 
         <div class="hover-container">
-            <div class="control-left">
-                <p @click="previous" class="prev">
-                    PREVIOUS
-                </p>
-            </div>
+            
+            
         </div>
         <div class="hover-container">
-            <div class="control-right">
-                <P @click="next" class="next">
-                    NEXT
-                </P>
-            </div>
+            
+            
         </div>
     </div>
 </template>

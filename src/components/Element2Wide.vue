@@ -203,16 +203,12 @@
         <div class="nav-buttons">
             <div class="hover-container">
                 <div class="control-left">
-                    <p @click="previous" class="prev" style="font-size: 35px;">
-                        <
-                    </p>
+                    
                 </div>
             </div>
             <div class="hover-container">
                 <div class="control-right" style="font-size: 35px;">
-                    <P @click="next" class="next">
-                        >
-                    </P>
+                    
                 </div>
             </div>
         </div>
@@ -294,7 +290,7 @@ export default{
                     clearInterval(id);
                 }
                 else {
-                    pos += 5; 
+                    pos += 5;
                     let leftDirection;
                     let rightDirection;
                     if (window.screen.width < 600) {
@@ -309,11 +305,14 @@ export default{
                         leftDirection = 12;
                         rightDirection = 12;
                     }
-                    else {
-                        leftDirection = 13;
-                        rightDirection = 13;
+                    else if (window.screen.width <= 2560){
+                        leftDirection = 14;
+                        rightDirection = 13.5;
                     }
-
+                    else {
+                        leftDirection = 18;
+                        rightDirection = 17.5;
+                    }
                     if(position == 'next'){  
                         el.scrollLeft +=  leftDirection
                     }
@@ -371,7 +370,7 @@ header{
   background-color: rgb(255, 255, 130);
 }
 
-nav{
+nav {
   margin-left:5%;
   display: flex;
 }
@@ -394,6 +393,7 @@ nav a.router-link-exact-active {
   cursor: pointer;
   display:none;
 }
+
 #slide {
   height: 600px;
   width: 97%;
@@ -437,7 +437,7 @@ nav a.router-link-exact-active {
 #slide > div {
   min-width: 50%;
   height: 100%;
-  min-height:400px;
+  min-height: 400px;
   padding-right: 2%;
   padding-left:2%;
   box-sizing: border-box;
@@ -461,30 +461,36 @@ nav a.router-link-exact-active {
   display:block;
   margin:0;
 }
+
 #slide > div > div > h6 {
     margin: 0;
     font-size: 16px;
     text-align: center;
 }
+
 #slide > div > div > p {
     font-size: 14px;
     text-align: left;
     margin:0;
 }
+
 .hover-container :hover {
     opacity: 0.5;
 }
+
 #slide > div > textarea{
     margin: 0 4% 4% 4%;
     width:95%;
     height:10%;
 }
+
 .progress-container {
   width: 97%;
   height: 1%;
   background: #cccccc;
   margin:0;
 }
+
 .progress-bar {
   height: 8px;
   background: #04AA6D;
@@ -500,8 +506,8 @@ nav a.router-link-exact-active {
     text-align: justify;
 }
 
-/*** Media Quiries ***/
-@media (max-width: 700px) {
+/*** Media Quiries for Width ***/
+@media screen and (max-width: 700px) {
     #slide > div { 
         min-width: 100%;
     }
@@ -535,4 +541,8 @@ nav a.router-link-exact-active {
     }
 }
 
+/***Media Quiries for Height */
+@media screen and (max-height: 770px) {
+    
+}
 </style>
