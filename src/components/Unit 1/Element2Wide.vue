@@ -18,7 +18,7 @@
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
         </div>
-        <p style="color:aliceblue; font-size: 20px; " >
+        <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
         <div id="slide" v-if="!gridEnabled" @mousedown="touchStartMethod">
@@ -290,20 +290,24 @@ export default{
             let resize = num * width
             let check = position == "reset" ? resize : width 
             function frame() {
-                if (pos == check) {
+                if (pos >= check) {
                     clearInterval(id);
                 }
                 else {
                     pos += 5;
                     let leftDirection;
                     let rightDirection;
-                    if (window.screen.width < 600) {
-                        leftDirection = 10;
-                        rightDirection = 10;
+                    if (window.screen.width < 425) {
+                        leftDirection = 9;
+                        rightDirection = 9;
+                    }
+                    else if (window.screen.width < 499) {
+                        leftDirection = 8.7;
+                        rightDirection = 8.2;
                     }
                     else if (window.screen.width < 1600) {
                         leftDirection = 10;
-                        rightDirection = 9.5;
+                        rightDirection = 10;
                     }
                     else if (window.screen.width <= 1920) {
                         leftDirection = 12;
@@ -325,11 +329,13 @@ export default{
                     }
                 }
             }
+            
             console.log(position)
             console.log(resize)
             console.log(check)
             console.log(width);
             console.log(pos);
+            console.log(document.getElementById("container").offsetWidth/2)
         },
 
         resetScroll(){
@@ -359,6 +365,20 @@ export default{
 
 <style scoped>
 /* Header */
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background-color: rgb(72, 72, 72);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+header{
+  background-color: rgb(255, 255, 130);
+}
 
 nav {
   margin-left:5%;
@@ -382,6 +402,13 @@ nav a.router-link-exact-active {
   color:white;
   cursor: pointer;
   display:none;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 2vh;
+    color:aliceblue; 
+    font-size: 20px;
 }
 
 #slide {
@@ -500,6 +527,24 @@ nav a.router-link-exact-active {
 @media screen and (max-width: 700px) {
     #slide > div { 
         min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #slide {
+        width: 86%;
+    }
+    .progress-container {
+        width: 86%;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width:499px) {
+    #slide {
+        width: 85.5%;
+    }
+    .progress-container {
+        width: 86%;
     }
 }
 

@@ -48,7 +48,7 @@ export default {
   margin-left:auto;
   width:60px;
 } ***/
- 
+
 .background{
   align-items: center;
   justify-content: center;
