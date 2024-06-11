@@ -395,7 +395,7 @@ nav a.router-link-exact-active {
 }
 
 #slide {
-  height: 600px;
+  height: 85vh;
   width: 97%;
   display: flex;
   overflow: hidden;
