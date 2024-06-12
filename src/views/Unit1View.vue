@@ -1,7 +1,8 @@
 <template>
-  <!--+ and - button changes the font size, width, and height of the overall format.-->
+  
   <div class="background">
     <!---
+    + and - button changes the font size, width, and height of the overall format.
     <div class="sizeButtons">
       <button @click="changeToWide()">+</button>
       <button @click="changeToNarrow()">-</button>

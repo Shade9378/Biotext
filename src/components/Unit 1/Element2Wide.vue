@@ -463,6 +463,11 @@ nav a.router-link-exact-active {
   margin:0;
   font-family: 'Times New Roman', Times, serif; 
   overflow-y: scroll !important; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+#slide > div::-webkit-scrollbar {
+  display: none;
 }
 
 #slide > div > img {
