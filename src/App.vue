@@ -11,7 +11,7 @@
         </div>
       </div>
       <div id="pg-content">
-        <div class="open" style="font-size:2vw;cursor:pointer;color:#5b5b5b" @click="openSM">&#9776;</div>
+        <div class="open" @click="openSM">&#9776;</div>
       </div>
       <h3><router-link to="/" style="text-decoration: none;">Organic Chemistry E-Text</router-link></h3>
     </nav>
@@ -65,10 +65,14 @@ export default{
 <style>
 h3 {
   margin: 3vw;
+  font-size: 150% !important;
 }
 
 .open {
   margin: 0%;
+  font-size:2vw;
+  cursor:pointer;
+  color:#5b5b5b
 }
 
 nav {
@@ -154,5 +158,22 @@ nav {
   transition: margin-left 0.5s;
   padding: 5px;
 }
- 
+@media screen and (max-width: 600px) {
+  h3 {
+    margin: 5vw;
+    font-size: 5vw !important;
+  }
+  .open {
+    font-size: 3vw !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h3 {
+
+    font-size: 2vw !important;
+  }
+}
+
+
 </style>

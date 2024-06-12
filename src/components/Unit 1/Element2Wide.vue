@@ -408,7 +408,7 @@ nav a.router-link-exact-active {
     font-family: 'Times New Roman', Times, serif;
     margin-top: 2vh;
     color:aliceblue; 
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 #slide {
@@ -523,7 +523,7 @@ nav a.router-link-exact-active {
 
 #slide > .page > p {
     margin: 12.5px;
-    font-size: 17px;
+    font-size: 2.5vh;
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
 }
@@ -533,14 +533,16 @@ nav a.router-link-exact-active {
     #slide > div { 
         min-width: 100%;
     }
-}
-
-@media screen and (max-width: 425px) {
-    #slide {
-        width: 86%;
+    .title {
+        font-size: 5vw;
     }
-    .progress-container {
-        width: 86%;
+}
+@media screen and (orientation:portrait) {
+    #slide > div { 
+        min-width: 100%;
+    }
+    .title {
+        font-size: 5vw;
     }
 }
 
@@ -582,7 +584,4 @@ nav a.router-link-exact-active {
 }
 
 /***Media Quiries for Height */
-@media screen and (max-height: 770px) {
-    
-}
 </style>
