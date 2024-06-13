@@ -404,20 +404,19 @@ nav a.router-link-exact-active {
 }
 
 .nav-buttons {
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.1);
     position: absolute;
     display: flex;
     width: 140px;
     justify-content: center;
     justify-self: center;
-    opacity: 0.3;
     border-radius: 35px;
-    right: 150px;
-    bottom: 39px;
+    right: 53px;
+    bottom: -13px;
 }
 
 .control {
-    opacity: 0.5;
+    opacity: 0.15;
     display: flex;
     margin: auto;
     align-items: center;
@@ -427,7 +426,7 @@ nav a.router-link-exact-active {
 }
 
 .nav-buttons :hover {
-    opacity: 1;
+    opacity: 0.5;
 }
 
 #slide {
@@ -443,8 +442,9 @@ nav a.router-link-exact-active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-bottom: 5%;
+  margin: 0;
+  min-width: 100vw;
+  padding-bottom: 0;
   height:100%;
   padding-right: 0;
   padding-left: 0;
