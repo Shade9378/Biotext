@@ -4,7 +4,13 @@
       <div id="mySidemenu" class="sidemenu">
         <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
         <div class="sm-wrapper">
-          <router-link tag="a" to="/scroll">Unit 1. Bonding, Introduction to Structural Representations</router-link>
+          <div class="dropdown">
+            <router-link tag="a" to="/scroll">Unit 1. Bonding, Introduction to Structural Representations</router-link>
+              <ul class="dropdown-content">
+                <li>Bonding</li>
+                <li>Representing structures</li>
+              </ul>
+          </div>
           <a href="#">Unit 2. More Structural Representations and Isomers</a>
           <a href="#">Unit 3</a>
           <a href="#">Unit 4</a>
@@ -151,7 +157,17 @@ nav {
   padding-left: 5px;
   transition: 0.35s ease-in-out;
 }
- 
+
+.dropdown-content {
+  width: 50px;
+  display: none;
+  color: white;
+  font-size: 11px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
 /* CONTENT PART */
  
 #pg-content{
