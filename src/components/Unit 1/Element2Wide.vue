@@ -46,20 +46,20 @@
             </div>
             <div class="page" id="page">
                 <div>
-                    <h6>
+                    <p>
                         Deena did a podcast describing her motivation for her research:
-                    </h6>
+                    </p>
                     <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
                     <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
                     width="70%"></iframe>
                     <p style="margin: 10px;">
                         When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
                     </p>
-                    <p style="margin: 10px; font-size: small;">
+                    <p style="margin: 10px;">
                         Deena Walker is a postdoctoral fellow at Mt. Sinai School of Medicine where she studies the molecular mechanisms of addiction and depression. She recently moved to New York after finishing her PhD at The University of Texas at Austin in December 2012. When she's not in lab she enjoys practicing yoga and playing fetch with her dog in Central Park.
                     </p>
                 </div>
-                <p style="font-size: 15px" >
+                <p>
                     <strong>What we will learn in this unit:</strong>
                     <ul list-style: disc outside none>
                         <li>Common bonding patterns in organic compounds.</li>
@@ -67,7 +67,7 @@
                         <li>Drawing condensed structures.</li>
                     </ul>
                 </p>
-                <p style="font-size: 15px; margin-bottom: 5px;"><strong>Learning Goal:</strong></p>
+                <p><strong>Learning Goal:</strong></p>
                 <textarea placeholder="Enter what you expect to learn from this course."/>
             </div>
             <div class="page" id="page">
@@ -130,8 +130,8 @@
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
                 <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:40%;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:40%;">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:45%;">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:45%;">
                 </div>
                 <p style="margin-top: 30px;">
                     It is possible for two atoms to share more electrons with each other, always in pairs. 
@@ -145,7 +145,7 @@
                 <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
                     valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
                 </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto ">
+                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 100%">
                 <p>
                     Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                     it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
@@ -201,12 +201,12 @@
             <div class="progress-bar" id="myBar"></div>
         </div> 
         <div class="nav-buttons">
-                <div @click="previous" class="control" style="font-size: 90px;">
+                <button @click="previous" class="control" style="font-size: 90px;">
                     <
-                </div>
-                <div @click="next" class="control" style="font-size: 90px;">
+                </button>
+                <button @click="next" class="control" style="font-size: 90px;">
                     >
-                </div>
+                </button>
             </div>
     </div>
 </template>
@@ -423,6 +423,7 @@ nav a.router-link-exact-active {
     justify-self: center;
     height: 70px;
     color: yellow ;
+    border: none;
 }
 
 .nav-buttons :hover {
@@ -490,9 +491,10 @@ nav a.router-link-exact-active {
 }
 
 #slide > div > div > p {
-    font-size: 14px;
-    text-align: left;
-    margin:0;
+    margin: 12.5px;
+    font-size: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
 }
 
 #slide > div > textarea{
@@ -518,7 +520,7 @@ nav a.router-link-exact-active {
 
 #slide > .page > p {
     margin: 12.5px;
-    font-size: 2.5vh;
+    font-size: 2.7vh;
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
 }
