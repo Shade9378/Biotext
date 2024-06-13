@@ -201,21 +201,13 @@
             <div class="progress-bar" id="myBar"></div>
         </div> 
         <div class="nav-buttons">
-            <div class="hover-container">
-                <div class="control-left">
-                    <p @click="previous" class="prev" style="font-size: 35px;">
-                        <
-                    </p>
+                <div @click="previous" class="control" style="font-size: 90px;">
+                    <
+                </div>
+                <div @click="next" class="control" style="font-size: 90px;">
+                    >
                 </div>
             </div>
-            <div class="hover-container">
-                <div class="control-right" style="font-size: 35px;">
-                    <P @click="next" class="next">
-                        >
-                    </P>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -307,7 +299,7 @@ export default{
                     }
                     else if (window.screen.width < 1600) {
                         leftDirection = 10;
-                        rightDirection = 10;
+                        rightDirection = 9.5;
                     }
                     else if (window.screen.width <= 1920) {
                         leftDirection = 12;
@@ -411,6 +403,33 @@ nav a.router-link-exact-active {
     font-size: 2vw;
 }
 
+.nav-buttons {
+    background-color: gray;
+    position: absolute;
+    display: flex;
+    width: 140px;
+    justify-content: center;
+    justify-self: center;
+    opacity: 0.3;
+    border-radius: 35px;
+    right: 150px;
+    bottom: 39px;
+}
+
+.control {
+    opacity: 0.5;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-self: center;
+    height: 70px;
+    color: yellow ;
+}
+
+.nav-buttons :hover {
+    opacity: 1;
+}
+
 #slide {
   height: 85vh;
   width: 97%;
@@ -430,27 +449,7 @@ nav a.router-link-exact-active {
   padding-right: 0;
   padding-left: 0;
 }
-.prev {
-  display: inline-block;
-  margin-right: 4%;
-  cursor: pointer;
-  color: yellow;
-}
-.next {
-  display: inline-block;
-  cursor: pointer;
-  color: yellow;
-}
-.control-right {
-  position: absolute;
-  bottom: 25;
-  right: 30px;
-}
-.control-left {
-  position: absolute;
-  bottom: 25;
-  left: 30px;
-}
+
 #slide > div {
   min-width: 50%;
   height: 100%;
@@ -494,10 +493,6 @@ nav a.router-link-exact-active {
     font-size: 14px;
     text-align: left;
     margin:0;
-}
-
-.hover-container :hover {
-    opacity: 0.5;
 }
 
 #slide > div > textarea{
