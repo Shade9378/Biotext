@@ -5,15 +5,33 @@
         <a href="javascript:void(0)" class="close" @click="closeSM">&times;</a>
         <div class="sm-wrapper">
           <div class="dropdown">
-            <router-link tag="a" to="/scroll">Unit 1. Bonding, Introduction to Structural Representations</router-link>
-              <ul class="dropdown-content">
-                <li>Bonding</li>
-                <li>Representing structures</li>
+            <a class="title" href="#" @click="openSubMenu('dropdown-content1')">Section 1</a>
+            <div class="dropdown-content" id="dropdown-content1">
+              <ul style="list-style-type: none; padding: 0;">
+                <li><router-link to="/scroll">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
+                <li><router-link to="/scroll">Unit 2. More Structural Representations and Isomers</router-link></li>
+                <li><router-link to="/scroll">Unit 3. </router-link></li>
+                <li><router-link to="/scroll">Unit 4. </router-link></li>
+                <li><router-link to="/scroll">Unit 5. </router-link></li>
+                <li><router-link to="/scroll">Unit 6. </router-link></li>
+                <li><router-link to="/scroll">Unit 7. </router-link></li>
+                <li><router-link to="/scroll">Unit 8. </router-link></li>
+                <li><router-link to="/scroll">Unit 9. </router-link></li>
+                <li><router-link to="/scroll">Unit 10. </router-link></li>
               </ul>
+            </div>
           </div>
-          <a href="#">Unit 2. More Structural Representations and Isomers</a>
-          <a href="#">Unit 3</a>
-          <a href="#">Unit 4</a>
+          <div class="dropdown">
+            <a class="title" href="#" @click="openSubMenu('dropdown-content2')">Section 2</a>
+            <div class="dropdown-content" id="dropdown-content2">
+              <ul style="list-style-type: none; padding: 0;">
+                <li><router-link to="/scroll">Unit 11.</router-link></li>
+                <li><router-link to="/scroll">Unit 12. </router-link></li>
+                <li><router-link to="/scroll">Unit 13. </router-link></li>
+              </ul>
+            </div>
+          </div>
+          <a class="title" href="#">Section 3</a>
         </div>
       </div>
       <div id="pg-content">
@@ -63,7 +81,17 @@ export default{
     closeSM(){
       document.getElementById("mySidemenu").style.width = "0";
       document.getElementById("pg-content").style.marginLeft ="0";
-    }
+    },
+
+    openSubMenu(id){
+      const el = document.getElementById(id);
+      if (window.getComputedStyle(el).display == "block") {
+        el.style.display = "none";
+      }
+      else {
+        el.style.display = "block";
+      }
+    },
   },
 }
 </script>
@@ -166,10 +194,12 @@ nav {
   font-size: 11px;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
 
-/* CONTENT PART */
+.title {
+  display: flex; 
+  min-width: 300px; 
+  justify-content: center;
+}
  
 #pg-content{
   transition: margin-left 0.5s;

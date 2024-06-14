@@ -8,15 +8,19 @@
         https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
     -->
     <div class="container" id="container">
-        <div id="overlay" class="overlay">
+        <div id="overlay1" class="overlay">
             <!--
                 Overlay class rests upon the slide class. It contains video/3d model data and it expands when a user
                 selects the thumbnail picture.
             -->
-            <p @click="closeVideo()">X</p>
+            <p @click="closeVideo('overlay1')">X</p>
             <video width="60%" controls>
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
+        </div>
+        <div id="overlay2" class="overlay">
+            <p @click="closeVideo()">X</p>
+            <img width="60%" src="@/assets/Unit1-PeriodicTable.webp">Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I ​</img>
         </div>
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
@@ -120,7 +124,7 @@
                 <div style="width: 100%; height: 53%;">
                     <h6>Animation: Two people sharing soda?</h6>
                     <div class="hover-container">
-                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo()">
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo('overlay1')">
                     </div>
                 </div>
             </div>
@@ -230,12 +234,12 @@ export default{
 
     methods:{
         ////playVideo() invokes the overlay area that has a video on top of it.
-        playVideo(){
-            document.getElementById("overlay").style.display = "block";
+        playVideo(overlayClass){
+            document.getElementById(overlayClass).style.display = "block";
         },
         //closeVideo() closes the overlay area.
-        closeVideo(){
-            document.getElementById("overlay").style.display = "none";
+        closeVideo(overlayClass){
+            document.getElementById(overlayClass).style.display = "none";
         },
         play3D(){
             document.getElementById("overlay2").style.display = "block";
@@ -418,7 +422,7 @@ nav a.router-link-exact-active {
 
 .control {
     background: transparent;
-    opacity: 0.15;
+    opacity: 0.3;
     display: flex;
     margin: auto;
     align-items: center;
@@ -535,7 +539,7 @@ nav a.router-link-exact-active {
         font-size: 5vw;
     }
     .container {
-        min-width: 82vw;
+        min-width: 85.3vw;
     }
 }
 @media screen and (orientation:portrait) {
