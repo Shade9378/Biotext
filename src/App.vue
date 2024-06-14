@@ -191,6 +191,4 @@ nav {
     font-size: 2vw !important;
   }
 }
-
-
 </style>
