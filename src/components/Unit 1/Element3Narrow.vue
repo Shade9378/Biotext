@@ -46,9 +46,9 @@
             </div>
             <div class="page" id="page">
                 <div>
-                    <p>
+                    <h6>
                         Deena did a podcast describing her motivation for her research:
-                    </p>
+                    </h6>
                     <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
                     <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
                     width="50%"></iframe>
@@ -354,7 +354,7 @@ nav a.router-link-exact-active {
   text-indent: 2%;
 }
 .container {
-  width: 100%;
+  width: 50%;
   padding-bottom: 5%;
   height:100%;
   margin-left:2%;
@@ -362,7 +362,27 @@ nav a.router-link-exact-active {
   padding-right: 0;
   padding-left: 0;
 }
-
+.prev {
+  display: inline-block;
+  margin-right: 4%;
+  cursor: pointer;
+  color: yellow;
+}
+.next {
+  display: inline-block;
+  cursor: pointer;
+  color: yellow;
+}
+.control-right {
+  position: absolute;
+  bottom: 25;
+  right: 30px;
+}
+.control-left {
+  position: absolute;
+  bottom: 25;
+  left: 30px;
+}
 #slide > div {
   width: 50%;
   min-height:300px;
@@ -374,12 +394,21 @@ nav a.router-link-exact-active {
   text-align: left;
   margin:0;
 }
-
 #slide > div > img {
   display: block;
   max-width: 40%;
 }
-
+#slide > div > p {
+  margin-bottom: 0;
+  font-size: 10px;
+}#slide > div > ul{
+  margin-bottom: 0;
+  font-size: 10px;
+}
+#slide > div > h4 {
+  margin-bottom: 0;
+  font-size: 14px;
+}
 #slide > div > div {
   padding:1%;
   color: #FFFFFF;

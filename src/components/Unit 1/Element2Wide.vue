@@ -95,7 +95,7 @@
                 <div style="display: flex; justify-content: center; margin-bottom: 27px;">
                     <div class="elemtal-chart" style="height:54%; width: 100%; display: flex; flex-direction: column; align-items: center;">
                         <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
-                        <h6 style="font-family: 'Times New Roman', Times, serif;'">
+                        <h6 style="font-family: 'League Spartan', sans-serif;">
                             Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
     ​                    </h6>
                     </div>
@@ -287,9 +287,9 @@ export default{
                 }
                 else {
                     pos += 5;
-                    let leftDirection;
-                    let rightDirection;
-                    if (window.screen.width < 425) {
+                    let leftDirection = 12;
+                    let rightDirection = 12;
+                    /*** if (window.screen.width < 425) {
                         leftDirection = 9;
                         rightDirection = 9;
                     }
@@ -298,8 +298,8 @@ export default{
                         rightDirection = 8.2;
                     }
                     else if (window.screen.width < 1600) {
-                        leftDirection = 10;
-                        rightDirection = 9.5;
+                        leftDirection = 12;
+                        rightDirection = 12;
                     }
                     else if (window.screen.width <= 1920) {
                         leftDirection = 12;
@@ -312,7 +312,7 @@ export default{
                     else {
                         leftDirection = 18;
                         rightDirection = 17.5;
-                    }
+                    } ***/
                     if(position == 'next'){  
                         el.scrollLeft +=  leftDirection
                     }
@@ -356,6 +356,7 @@ export default{
 </script>
 
 <style scoped>
+
 /* Header */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -397,10 +398,10 @@ nav a.router-link-exact-active {
 }
 
 .title {
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 2vh;
+    font-family: "League Spartan", sans-serif;
+    margin: 1vw;
     color:aliceblue; 
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
 
 .nav-buttons {
@@ -416,6 +417,7 @@ nav a.router-link-exact-active {
 }
 
 .control {
+    background: transparent;
     opacity: 0.15;
     display: flex;
     margin: auto;
@@ -432,7 +434,7 @@ nav a.router-link-exact-active {
 
 #slide {
   height: 85vh;
-  width: 97%;
+  width: 120%;
   display: flex;
   overflow: hidden;
   align-items: flex-start;
@@ -444,7 +446,7 @@ nav a.router-link-exact-active {
   justify-content: center;
   align-items: center;
   margin: 0;
-  min-width: 100vw;
+  max-width: 81vw;
   padding-bottom: 0;
   height:100%;
   padding-right: 0;
@@ -461,7 +463,6 @@ nav a.router-link-exact-active {
   background-color: aliceblue;
   text-align: left;
   margin:0;
-  font-family: 'Times New Roman', Times, serif; 
   overflow-y: scroll !important; 
   -ms-overflow-style: none;  
   scrollbar-width: none;  
@@ -493,7 +494,7 @@ nav a.router-link-exact-active {
 #slide > div > div > p {
     margin: 12.5px;
     font-size: 2vh;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "League Spartan",sans-serif;
     text-align: justify;
 }
 
@@ -521,7 +522,7 @@ nav a.router-link-exact-active {
 #slide > .page > p {
     margin: 12.5px;
     font-size: 2.7vh;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:"League Spartan",sans-serif;
     text-align: justify;
 }
 
@@ -533,17 +534,20 @@ nav a.router-link-exact-active {
     .title {
         font-size: 5vw;
     }
+    .container {
+        min-width: 82vw;
+    }
 }
 @media screen and (orientation:portrait) {
     #slide > div { 
         min-width: 100%;
     }
     .title {
-        font-size: 5vw;
+        font-size: 150%;
     }
 }
 
-@media screen and (min-width: 426px) and (max-width:499px) {
+/*** @media screen and (min-width: 426px) and (max-width:499px) {
     #slide {
         width: 85.5%;
     }
@@ -578,7 +582,7 @@ nav a.router-link-exact-active {
     .progress-container {
         width: 177%;
     }
-}
+} ***/
 
 /***Media Quiries for Height */
 </style>

@@ -19,7 +19,7 @@
       <div id="pg-content">
         <div class="open" @click="openSM">&#9776;</div>
       </div>
-      <h3><router-link to="/" style="text-decoration: none;">Organic Chemistry E-Text</router-link></h3>
+      <h3><router-link to="/" style="text-decoration: none; font-family: 'League Spartan', sans-serif;">Organic Chemistry E-Text</router-link></h3>
     </nav>
   </header>
 
@@ -71,7 +71,7 @@ export default{
 <style>
 h3 {
   margin: 3vw;
-  font-size: 150% !important;
+  font-size: 200% !important;
 }
 
 .open {
@@ -121,7 +121,7 @@ nav {
   margin:15px 20px;
   text-decoration: none;
   font-size: 11px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "League Spartan", sans-serif;
   color: #ffffff;
   display: block;
   margin-bottom: 20px;
@@ -162,6 +162,7 @@ nav {
   width: 50px;
   display: none;
   color: white;
+  font-family: "League Spartan", sans-serif;
   font-size: 11px;
 }
 
@@ -177,7 +178,7 @@ nav {
 @media screen and (max-width: 600px) {
   h3 {
     margin: 5vw;
-    font-size: 5vw !important;
+    font-size: 6vw !important;
   }
   .open {
     font-size: 3vw !important;
