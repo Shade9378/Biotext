@@ -57,7 +57,7 @@ export default{
 
   methods: {
     openSM(){
-      if (parseInt( document.getElementById("mySidemenu").style.width) == 350) {
+      if ((parseInt( document.getElementById("mySidemenu").style.width) == 450)|| (parseInt(document.getElementById("mySidemenu").style.width) == 350)) {
         this.closeSM();
       }
       else {
@@ -66,14 +66,14 @@ export default{
           document.getElementById("pg-content").style.marginLeft = "0px";
         }
         else {
-          document.getElementById("mySidemenu").style.width ="350px";
-          document.getElementById("pg-content").style.marginLeft = "350px";
+          document.getElementById("mySidemenu").style.width ="450px";
+          document.getElementById("pg-content").style.marginLeft = "450px";
         }
       }
     },
 
     clickOut(){
-      if (parseInt(document.getElementById("mySidemenu").style.width) == 350) {
+      if ((parseInt(document.getElementById("mySidemenu").style.width) == 450) || (parseInt(document.getElementById("mySidemenu").style.width) == 350)) {
         this.closeSM();
       }
     },
@@ -148,7 +148,7 @@ nav {
 .sidemenu a{
   margin:15px 20px;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 15px;
   font-family: "League Spartan", sans-serif;
   color: #ffffff;
   display: block;
@@ -197,7 +197,7 @@ nav {
 
 .title {
   display: flex; 
-  min-width: 300px; 
+  min-width: 400px; 
   justify-content: center;
 }
  
@@ -205,6 +205,7 @@ nav {
   transition: margin-left 0.5s;
   padding: 5px;
 }
+
 @media screen and (max-width: 600px) {
   h3 {
     margin: 5vw;
@@ -212,6 +213,10 @@ nav {
   }
   .open {
     font-size: 3vw !important;
+  }
+
+  .title {
+    min-width: 300px;
   }
 }
 
