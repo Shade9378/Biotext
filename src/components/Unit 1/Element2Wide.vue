@@ -266,13 +266,14 @@ export default{
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
-            var totalWidth = document.getElementById("container").offsetWidth;
-            var scrolled = totalWidth / 4; //6 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
+            var totalWidth = document.getElementById("slide").offsetWidth;
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 9 : totalWidth / 4; //4 because the current slide has 10 pages. (10/2 = 5, 5-1=4)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
+
         previous() {
-            if(this.count <= 5 && this.count > 0){
+            if(this.count <= 10 && this.count > 0){ //10 because the current slide has 10 pages
                 this.count--
             }
             this.scroll("previous")
@@ -280,7 +281,7 @@ export default{
         },
 
         next() {
-            if(this.count < 5 && this.count >= 0){
+            if(this.count < 10 && this.count >= 0){ //10 because the current slide has 10 pages
                 this.count++
             }
             this.scroll("next")
@@ -535,7 +536,7 @@ nav a.router-link-exact-active {
 }
 
 .progress-container {
-  width: 97%;
+  width: 120%;
   height: 1%;
   background: #cccccc;
   margin:0;
