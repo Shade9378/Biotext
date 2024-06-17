@@ -7,7 +7,8 @@
         Code reference: Adeoye's blog article "How to build a Vuejs image slider"
         https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
     -->
-    <div class="nav-buttons">
+    <div class="container" id="container">
+        <div class="nav-buttons">
             <button @click="previous" class="control" style="font-size: 90px;">
                 <
             </button>
@@ -15,36 +16,25 @@
                 >
             </button>
         </div>
-    <div class="container" id="container">
         
-        <div id="overlay1" class="overlay" @click="clickOut('overlay1'); clickOut('media1')">
+        <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media') ">
             <!--
                 Overlay class rests upon the slide class. It contains video/3d model data and it expands when a user
                 selects the thumbnail picture.
             -->
-            <p @click="closeVideo('overlay1')">X</p>
         </div>
         <video id="media1" class="media" width="80%" controls>
             <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
         </video>
 
+        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp">Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I ​</img>
 
-        <div id="overlay2" class="overlay">
-            <p @click="closeVideo('overlay2')">X</p>
-            <img width="80%" src="@/assets/Unit1-PeriodicTable.webp">Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I ​</img>
-        </div>
-        <div id="overlay3" class="overlay">
-            <p @click="closeVideo('overlay3')">X</p>
-            <img width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">​</img>
-        </div>
-        <div id="overlay4" class="overlay">
-            <p @click="closeVideo('overlay4')">X</p>
-            <img width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">​</img>
-        </div>
-        <div id="overlay5" class="overlay">
-            <p @click="closeVideo('overlay5')">X</p>
-            <img width="80%" src="@/assets/Unit1-BondSymbolTable.webp">​</img>
-        </div>
+        <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">​</img>
+
+        <img id="media4" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">​</img>
+
+        <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">​</img>
+
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
@@ -119,7 +109,7 @@
                 </p>
             </div>
             <div class="page" id="page">
-                <div style="display: flex; justify-content: center; margin-bottom: 27px;" @click="playVideo('overlay2')">
+                <div style="display: flex; justify-content: center; margin-bottom: 27px;" @click="playVideo('overlay'); playVideo('media2')">
                     <div class="elemtal-chart" style="height:54%; width: 100%; display: flex; flex-direction: column; align-items: center;">
                         <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
                         <h6 style="font-family: 'League Spartan', sans-serif;">
@@ -147,7 +137,7 @@
                 <div style="width: 100%; height: 53%;">
                     <h6>Animation: Two people sharing soda?</h6>
                     <div class="hover-container">
-                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo('overlay1'); playVideo('media1')" >
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo('overlay'); playVideo('media1')" >
                     </div>
                 </div>
             </div>
@@ -157,8 +147,8 @@
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
                 <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:45%;" @click="playVideo('overlay3')">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:45%;" @click="playVideo('overlay4')">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:45%;" @click="playVideo('overlay'); playVideo('media3')">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:45%;" @click="playVideo('overlay'); playVideo('media4')">
                 </div>
                 <p style="margin-top: 30px;">
                     It is possible for two atoms to share more electrons with each other, always in pairs. 
@@ -172,7 +162,7 @@
                 <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
                     valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
                 </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 100%" @click="playVideo('overlay5')">
+                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 100%" @click="playVideo('overlay'); playVideo('media5')">
                 <p>
                     Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                     it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
@@ -262,10 +252,10 @@ export default{
         close3D(){
             document.getElementById("overlay2").style.display = "none";
         },
-        clickOut(id){
-            const el = document.getElementById(id);
-            if (window.getComputedStyle(el).display == "flex") {
-                el.style.display = "none";
+        clickOut(cls){
+            const el = document.getElementsByClassName(cls);
+            for (let i=0; i < el.length; i += 1) {
+                el[i].style.display = "none";
             }
         },
         //handleScroll() manages the scroll bar function. Every time a user clicks Next/Previous,
@@ -415,8 +405,8 @@ nav a.router-link-exact-active {
 .overlay{
   position:fixed;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: rgba(67, 67, 67, 0.6);
   width:100%;
   height:120%;
@@ -428,10 +418,11 @@ nav a.router-link-exact-active {
 .media
 {
     position: absolute;
-    flex-direction: column;
-    justify-content: center;
-     align-items: center;
-    background-color: rgba(67, 67, 67, 0.6);
+    top: 20%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     color:white;
     cursor: pointer;
     display:none;
