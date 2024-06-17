@@ -38,7 +38,7 @@
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod">
+        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod">
             <div class="page" id="page">
                 <p style="margin-top: 27px;" >
                     Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
@@ -365,6 +365,31 @@ export default{
                 return;
             }
             const posXEnd = touchEvent.changedTouches[0].clientX;
+            if (posXStart < posXEnd) {
+                this.previous(); // swipe right
+            } else if (posXStart > posXEnd) {
+                this.next(); // swipe left
+            }
+        },
+
+        drag(event1, event2) {
+            let downPos = event1.clientX;
+            let upPos = event2.clientX;
+            if (downPos > upPos) {
+                this.previous();
+            }
+            else {
+                this.next();
+            }
+        },
+
+        mouseDownMethod (touchEvent) {
+            const posXStart = touchEvent.clientX;
+            addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
+        },
+
+        mouseUpMethod (touchEvent, posXStart) {
+            const posXEnd = touchEvent.clientX;
             if (posXStart < posXEnd) {
                 this.previous(); // swipe right
             } else if (posXStart > posXEnd) {
