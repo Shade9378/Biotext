@@ -354,7 +354,7 @@ nav a.router-link-exact-active {
   text-indent: 2%;
 }
 .container {
-  width: 50%;
+  width: 100%;
   padding-bottom: 5%;
   height:100%;
   margin-left:2%;
