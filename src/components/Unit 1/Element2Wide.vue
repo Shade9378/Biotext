@@ -372,28 +372,20 @@ export default{
             }
         },
 
-        drag(event1, event2) {
-            let downPos = event1.clientX;
-            let upPos = event2.clientX;
-            if (downPos > upPos) {
-                this.previous();
-            }
-            else {
-                this.next();
-            }
-        },
-
         mouseDownMethod (touchEvent) {
             const posXStart = touchEvent.clientX;
             addEventListener('mouseup', (touchEvent) => this.mouseUpMethod(touchEvent, posXStart), {once: true});
         },
 
         mouseUpMethod (touchEvent, posXStart) {
+            const cellText = document.getSelection();
             const posXEnd = touchEvent.clientX;
-            if (posXStart < posXEnd) {
-                this.previous(); // swipe right
-            } else if (posXStart > posXEnd) {
+            if (cellText.type != 'Range') {
+                if (posXStart < posXEnd) {
+                    this.previous(); // swipe right
+                } else if (posXStart > posXEnd) {
                 this.next(); // swipe left
+                }
             }
         },
     }
