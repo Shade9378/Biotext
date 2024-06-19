@@ -6,7 +6,7 @@
     <div class="sizeButtons">
       <button @click="changeToWide()">+</button>
       <button @click="changeToNarrow()">-</button>
-    </div>
+    </div>  test
     -->
     <Element2Wide/>
   </div>
