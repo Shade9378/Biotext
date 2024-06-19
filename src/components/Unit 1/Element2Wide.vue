@@ -27,21 +27,21 @@
             <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
         </video>
 
-        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp"> <​/img>
+        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp"> 
 
-        <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">​</img>
+        <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">
 
-        <img id="media4" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">​</img>
+        <img id="media4" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">
 
-        <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">​</img>
+        <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">
 
-        <img id="media6" class="media" width="80%" src="@/assets/Unit1LewisDot (1).webp">​</img>
+        <img id="media6" class="media" width="80%" src="@/assets/Unit1LewisDot (1).webp">
 
-        <img id="media7" class="media" width="80%" src="@/assets/Unit1NumberOfBonds.webp">​</img>
+        <img id="media7" class="media" width="80%" src="@/assets/Unit1NumberOfBonds.webp">
 
-        <img id="media8" class="media" width="80%" src="@/assets/Unit1LewisToCondensed.webp">​</img>
+        <img id="media8" class="media" width="80%" src="@/assets/Unit1LewisToCondensed.webp">
 
-        <img id="media9" class="media" width="80%" src="@/assets/Unit1CondensedToLewis.webp">​</img>
+        <img id="media9" class="media" width="80%" src="@/assets/Unit1CondensedToLewis.webp">
 
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations

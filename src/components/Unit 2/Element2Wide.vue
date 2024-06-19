@@ -27,13 +27,13 @@
             <source src="" type="video/mp4" showControl>
         </video>
 
-        <img id="media2" class="media" width="80%" src=""></img>
+        <img id="media2" class="media" width="80%" src="">
 
-        <img id="media3" class="media" width="40%" src="">​</img>
+        <img id="media3" class="media" width="40%" src="">​
 
-        <img id="media4" class="media" width="40%" src="">​</img>
+        <img id="media4" class="media" width="40%" src="">
 
-        <img id="media5" class="media" width="80%" src="">​</img>
+        <img id="media5" class="media" width="80%" src="">
 
         <p class="title">
             Unit 2. More Structural Representations and Isomers
