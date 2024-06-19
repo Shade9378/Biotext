@@ -7,7 +7,7 @@
         Code reference: Adeoye's blog article "How to build a Vuejs image slider"
         https://medium.com/@davidola360/how-to-create-a-vuejs-image-slider-60b4be844081
     -->
-    <div class="container" id="container">
+    <div class="container" id="container" @keyup="created">
         <div class="nav-buttons">
             <button @click="previous" class="control" style="font-size: 90px;">
                 <
@@ -17,7 +17,7 @@
             </button>
         </div>
         
-        <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media') ">
+        <div id="overlay" class="overlay" @click="clickOut('overlay'); clickOut('media')">
             <!--
                 Overlay class rests upon the slide class. It contains video/3d model data and it expands when a user
                 selects the thumbnail picture.
@@ -27,7 +27,7 @@
             <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
         </video>
 
-        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp">Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I ​</img>
+        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp"> <​/img>
 
         <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">​</img>
 
@@ -38,7 +38,7 @@
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod">
+        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
             <div class="page" id="page">
                 <p style="margin-top: 27px;" >
                     Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
@@ -101,31 +101,33 @@
                     Since organic chemistry is often defined as the chemistry of carbon compounds, carbon will be central to our studies. Other elements commonly found in organic compounds are 
                     hydrogen, oxygen, nitrogen, and the halogens (fluorine, chlorine, bromine, and iodine). We will also occasionally see sulfur and phosphorous.
                 </p>
+            </div>
+            <div class="page" id="page">
+                <div style="display: flex; justify-content: center; margin: 30px; background: none" @click="playVideo('overlay'); playVideo('media2')">
+                    <div class="elemtal-chart" style="height:54%; width: 50%; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+                        <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
+                        <h6 style="font-family: 'League Spartan', sans-serif; color: black;">
+                            Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
+    ​                    </h6>
+                    </div>
+                </div>
                 <p>
                     These elements follow specific patterns when they make covalent bonds with each other.
                     For reasons we will understand more fully later, the elements we will be working with 
                     (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
                     Hydrogen wants to have 2 valence electrons. 
                 </p>
-            </div>
-            <div class="page" id="page">
-                <div style="display: flex; justify-content: center; margin-bottom: 27px;" @click="playVideo('overlay'); playVideo('media2')">
-                    <div class="elemtal-chart" style="height:54%; width: 100%; display: flex; flex-direction: column; align-items: center;">
-                        <img src="@/assets/Unit1-PeriodicTable.webp" style="width:100%;">
-                        <h6 style="font-family: 'League Spartan', sans-serif;">
-                            Common elements in organic chemistry: C, H, O, N, F, Cl, Br, I
-    ​                    </h6>
-                    </div>
-                </div>
                 <p>
                     The atoms start with a certain number of valence electrons. 
                     The periodic table tells us (the numbers at the top of the columns) how many electrons each atom starts with. 
                     To get more electrons the atoms share with other atoms to make covalent bonds. 
-                    One electron shared from each atom makes a bond between the atoms. So every covalent bond is two electrons shared between two atoms. 
-                    By sharing the electrons it is like both atoms have one more electron than they started with.
+                    One electron shared from each atom makes a bond between the atoms. So every covalent 
                 </p>
             </div>
             <div class="page" id="page">
+                <p>
+                    bond is two electrons shared between two atoms. By sharing the electrons it is like both atoms have one more electron than they started with.
+                </p>
                 <p>
                     Covalent bonding is like two people sharing a drink. Sharing creates a bond between them. The same is true for atoms sharing electrons. 
                     The sharing holds the atoms together; it bonds them.
@@ -134,10 +136,10 @@
                     Sometimes when people share they don't share equally. Maybe one is bigger than the other so they take more. This can make the relationship less stable. 
                     The same can be said for bonds. Some atoms attract the shared electrons more than others. Usually this makes for bonds that are more reactive.
                 </p>
-                <div style="width: 100%; height: 53%;">
+                <div style="width: 70%; height: 25vh; margin-left: auto; margin-right: auto; overflow: hidden;">
                     <h6>Animation: Two people sharing soda?</h6>
                     <div class="hover-container">
-                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px;" @click="playVideo('overlay'); playVideo('media1')" >
+                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="width: 40%; height: 19vh; cursor: pointer;" @click="playVideo('overlay'); playVideo('media1')" >
                     </div>
                 </div>
             </div>
@@ -147,8 +149,8 @@
                     This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
                 </p>
                 <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:45%;" @click="playVideo('overlay'); playVideo('media3')">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:45%;" @click="playVideo('overlay'); playVideo('media4')">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:25%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
+                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:25%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
                 </div>
                 <p style="margin-top: 30px;">
                     It is possible for two atoms to share more electrons with each other, always in pairs. 
@@ -162,7 +164,7 @@
                 <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
                     valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
                 </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 100%" @click="playVideo('overlay'); playVideo('media5')">
+                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
                 <p>
                     Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                     it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
@@ -170,12 +172,15 @@
                     them up when we have more than 4 valence electrons. The dot structures show us how we can connect 
                     atoms to make molecules. Every where we have a single electron on a side we can make a bond to another 
                     atom. When all the atoms have all their single electrons used up the molecule is complete. Usually we 
-                    represent a bond with a line between the two atoms. A line represents a bond, which is a sharing of 
-                    two electrons. On sides where there are two electrons we don’t make a bond. Those electrons are not shared. 
-                    Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
+                    represent a bond with a line between the two
                 </p>
             </div>
             <div class="page" id="page">
+                <p>
+                    atoms. A line represents a bond, which is a sharing of two electrons. On
+                    sides where there are two electrons we don’t make a bond. Those electrons are not shared. 
+                    Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
+                </p>
                 <p><strong>Representing structures</strong></p>
                 <p>
                     There are multiple ways that chemists represent a molecule. We saw the Lewis dot structure or Lewis Structure 
@@ -187,6 +192,8 @@
                     how they are connected. It has the advantage of being easier to write and 
                     is useful for things like stoichiometry, but not very useful for understanding physical and chemical properties of the compound.                    
                 </p>
+            </div>
+            <div class="page" id="page">
                 <p>
                     The Lewis Structure tells us a lot about how the molecule is put together, but when we start working with larger 
                     molecules, let's say with 8 or more carbon atoms, it becomes cumbersome to write out every atom and every bond. 
@@ -197,21 +204,45 @@
                 </p>
                 <p>
                     None of these ways of representing the molecule (molecular formula, Lewis structure, condensed structure) are completely 
-                    accurate representations. While
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p style="text-indent: 0%;">
-                    the Lewis and condensed structures show us how the atoms are connected, they don’t 
+                    accurate representations. While the Lewis and condensed structures show us how the atoms are connected, they don’t 
                     adequately represent the three-dimensional nature of the molecules, as we saw in the video. One of the skills we need to 
                     develop is translating between the actual three dimensional molecule and the two-dimensional representations we are forced 
                     to use because of the nature of the paper, computer screens, white boards, and other media we use to communicate. We will 
                     want to use videos like this along with other 3D representations to help us learn to make this 3D to 2D connection. You 
-                    should also use your model kit to help with this. Ultimately, we want to be able to see the 2D representation but have a 
-                    mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
+                    should also use your model kit to
                 </p>
             </div>
             <div class="page" id="page">
+                <p>
+                    help with this. Ultimately, we want to be able to see the 2D representation but have a 
+                    mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
+                </p>
+                <p><strong>Now you try</strong></p>
+                <p>Write Lewis dot structures for the following compounds.</p>
+                <img class="excercise" src="@/assets/Unit1LewisDot (1).webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <p style="margin-bottom: 10%;">Now write the structures with lines to represent the sharing of two electrons (bonds).</p>
+                <p>Identify which atoms below do not have the normal number of bonds.</p>
+                <img src="@/assets/Unit1NumberOfBonds.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+            </div>
+            <div class="page" id="page">
+                <p>Convert the following Lewis structures into condensed structures.</p>
+                <img src="@/assets/Unit1LewisToCondensed.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <p>
+                    Convert the following condensed structures into Lewis structures.
+                </p>
+                <img src="@/assets/Unit1CondensedToLewis.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+            </div>
+            <div class="page" id="page">
+                <p><strong>Wrap-up</strong></p>
+                <p class="wrap-up-head">Review It</p>
+                <p class="wrap-up-content">Take a look at the learning goals you had for this unit. Did you achieve them?</p>
+                <p class="wrap-up-content">Write a few sentences summarizing this unit. What do you think are the main points? What skills were introduced that you need to develop?</p>
+                <p class="wrap-up-head">Evaluate It</p>
+                <p class="wrap-up-content">What do you think of the learning goals you wrote for this unit? Rewrite them if you think they could be improved.</p>
+                <p class="wrap-up-head">
+                    Prove It
+                </p class="wrap-up-content">
+                <p class="wrap-up-content">Explain this unit out loud to a friend or classmate. Pretend you are teaching it to them.</p>               
             </div>
         </div>
         <div class="progress-container">
@@ -384,12 +415,30 @@ export default{
                 if (posXStart < posXEnd) {
                     this.previous(); // swipe right
                 } else if (posXStart > posXEnd) {
-                this.next(); // swipe left
+                    this.next(); // swipe left
                 }
             }
         },
+        handleKeydown (e) {
+    	    switch (e.which) {
+                case 37:
+                    this.next();
+                    break;
+                case 39: 
+                    this.next();
+                    break;
+            }
+        },
+
+        beforeMount () {
+  	        window.addEventListener('keydown', this.handleKeydown, null);
+        },
+        beforeDestroy () {
+  	        window.removeEventListener('keydown', this.handleKeydown);
+        }
     }
 }
+
 </script>
 
 <style scoped>
@@ -576,6 +625,16 @@ nav a.router-link-exact-active {
     font-size: 2.7vh;
     font-family:"League Spartan",sans-serif;
     text-align: justify;
+}
+
+.wrap-up-head {
+    font-style: italic; 
+    margin-bottom: 0% !important;
+}
+
+.wrap-up-content {
+    margin-top: 0% !important;
+    margin-bottom: 50px !important
 }
 
 /*** Media Quiries for Width ***/

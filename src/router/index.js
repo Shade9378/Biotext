@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Unit1View from '../views/Unit1View.vue'
+import Unit2View from '../views/Unit2View.vue'
 
 const routes=[
   {
@@ -9,9 +10,15 @@ const routes=[
     component: HomeView
   },
   {
-    path: '/scroll',
-    name: 'scroll',
+    path: '/unit1',
+    name: 'unti1',
     component: Unit1View
+  },
+
+  {
+    path: '/unit2',
+    name: 'unit2',
+    component: Unit2View
   }
 ]
 

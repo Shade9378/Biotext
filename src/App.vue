@@ -8,16 +8,16 @@
             <a class="title" href="#" @click="openSubMenu('dropdown-content1')">Section 1</a>
             <div class="dropdown-content" id="dropdown-content1">
               <ul style="list-style-type: none; padding: 0;">
-                <li><router-link to="/scroll">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
-                <li><router-link to="/scroll">Unit 2. More Structural Representations and Isomers</router-link></li>
-                <li><router-link to="/scroll">Unit 3. </router-link></li>
-                <li><router-link to="/scroll">Unit 4. </router-link></li>
-                <li><router-link to="/scroll">Unit 5. </router-link></li>
-                <li><router-link to="/scroll">Unit 6. </router-link></li>
-                <li><router-link to="/scroll">Unit 7. </router-link></li>
-                <li><router-link to="/scroll">Unit 8. </router-link></li>
-                <li><router-link to="/scroll">Unit 9. </router-link></li>
-                <li><router-link to="/scroll">Unit 10. </router-link></li>
+                <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
+                <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
+                <li><router-link to="/">Unit 3. </router-link></li>
+                <li><router-link to="/">Unit 4. </router-link></li>
+                <li><router-link to="/">Unit 5. </router-link></li>
+                <li><router-link to="/">Unit 6. </router-link></li>
+                <li><router-link to="/">Unit 7. </router-link></li>
+                <li><router-link to="/">Unit 8. </router-link></li>
+                <li><router-link to="/">Unit 9. </router-link></li>
+                <li><router-link to="/">Unit 10. </router-link></li>
               </ul>
             </div>
           </div>
