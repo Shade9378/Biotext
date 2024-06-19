@@ -35,6 +35,14 @@
 
         <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">​</img>
 
+        <img id="media6" class="media" width="80%" src="@/assets/Unit1LewisDot (1).webp">​</img>
+
+        <img id="media7" class="media" width="80%" src="@/assets/Unit1NumberOfBonds.webp">​</img>
+
+        <img id="media8" class="media" width="80%" src="@/assets/Unit1LewisToCondensed.webp">​</img>
+
+        <img id="media9" class="media" width="80%" src="@/assets/Unit1CondensedToLewis.webp">​</img>
+
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
@@ -219,21 +227,21 @@
                 </p>
                 <p><strong>Now you try</strong></p>
                 <p>Write Lewis dot structures for the following compounds.</p>
-                <img class="excercise" src="@/assets/Unit1LewisDot (1).webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <img class="excercise" src="@/assets/Unit1LewisDot (1).webp" @click="playVideo('overlay'); playVideo('media6')">
                 <p style="margin-bottom: 10%;">Now write the structures with lines to represent the sharing of two electrons (bonds).</p>
                 <p>Identify which atoms below do not have the normal number of bonds.</p>
-                <img src="@/assets/Unit1NumberOfBonds.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <img class="excercise" src="@/assets/Unit1NumberOfBonds.webp" @click="playVideo('overlay'); playVideo('media7')">
             </div>
             <div class="page" id="page">
                 <p>Convert the following Lewis structures into condensed structures.</p>
-                <img src="@/assets/Unit1LewisToCondensed.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <img class="excercise" src="@/assets/Unit1LewisToCondensed.webp" @click="playVideo('overlay'); playVideo('media8')">
                 <p>
                     Convert the following condensed structures into Lewis structures.
                 </p>
-                <img src="@/assets/Unit1CondensedToLewis.webp" style="margin:30px auto; min-width: 90%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <img class="excercise" src="@/assets/Unit1CondensedToLewis.webp" @click="playVideo('overlay'); playVideo('media9')">
             </div>
             <div class="page" id="page">
-                <p><strong>Wrap-up</strong></p>
+                <p style="margin-bottom: 30px;"><strong>Wrap-up</strong></p>
                 <p class="wrap-up-head">Review It</p>
                 <p class="wrap-up-content">Take a look at the learning goals you had for this unit. Did you achieve them?</p>
                 <p class="wrap-up-content">Write a few sentences summarizing this unit. What do you think are the main points? What skills were introduced that you need to develop?</p>
@@ -298,13 +306,13 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 9 : totalWidth / 4; //4 because the current slide has 10 pages. (10/2 = 5, 5-1=4)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 11 : totalWidth / 5; //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
 
         previous() {
-            if(this.count <= 10 && this.count > 0){ //10 because the current slide has 10 pages
+            if(this.count <= 12 && this.count > 0){ //12 because the current slide has 12 pages
                 this.count--
             }
             this.scroll("previous")
@@ -312,7 +320,7 @@ export default{
         },
 
         next() {
-            if(this.count < 10 && this.count >= 0){ //10 because the current slide has 10 pages
+            if(this.count < 12 && this.count >= 0){ //12 because the current slide has 12 pages
                 this.count++
             }
             this.scroll("next")
@@ -486,14 +494,13 @@ nav a.router-link-exact-active {
   display:none;
 }
 
-.media
-{
+.media {
     position: absolute;
-    top: 20%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    top: 15%;
+    bottom: 0;
+    margin: auto;
     color:white;
     cursor: pointer;
     display:none;
@@ -635,6 +642,12 @@ nav a.router-link-exact-active {
 .wrap-up-content {
     margin-top: 0% !important;
     margin-bottom: 50px !important
+}
+
+.excercise {
+    margin:30px auto; 
+    min-width: 90%; 
+    cursor: pointer;
 }
 
 /*** Media Quiries for Width ***/

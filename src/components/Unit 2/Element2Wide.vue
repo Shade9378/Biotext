@@ -228,13 +228,13 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 9 : totalWidth / 4; //4 because the current slide has 10 pages. (10/2 = 5, 5-1=4)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 3 : totalWidth / 1; //1 because the current slide has 4 pages. (4/2 = 2, 2-1=1)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
 
         previous() {
-            if(this.count <= 10 && this.count > 0){ //10 because the current slide has 10 pages
+            if(this.count <= 2 && this.count > 0){ //2 because the current slide has 10 pages
                 this.count--
             }
             this.scroll("previous")
@@ -242,7 +242,7 @@ export default{
         },
 
         next() {
-            if(this.count < 10 && this.count >= 0){ //10 because the current slide has 10 pages
+            if(this.count < 2 && this.count >= 0){ //2 because the current slide has 10 pages
                 this.count++
             }
             this.scroll("next")
