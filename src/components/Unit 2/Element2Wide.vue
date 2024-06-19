@@ -24,16 +24,16 @@
             -->
         </div>
         <video id="media1" class="media" width="80%" controls>
-            <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
+            <source src="" type="video/mp4" showControl>
         </video>
 
-        <img id="media2" class="media" width="80%" src="@/assets/Unit1-PeriodicTable.webp"></img>
+        <img id="media2" class="media" width="80%" src=""></img>
 
-        <img id="media3" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png">​</img>
+        <img id="media3" class="media" width="40%" src="">​</img>
 
-        <img id="media4" class="media" width="40%" src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png">​</img>
+        <img id="media4" class="media" width="40%" src="">​</img>
 
-        <img id="media5" class="media" width="80%" src="@/assets/Unit1-BondSymbolTable.webp">​</img>
+        <img id="media5" class="media" width="80%" src="">​</img>
 
         <p class="title">
             Unit 2. More Structural Representations and Isomers
@@ -85,92 +85,6 @@
                 </p>
             </div>
             <div class="page" id="page">
-            </div>
-            <div class="page" id="page">
-                <p>
-                    Covalent bonding is like two people sharing a drink. Sharing creates a bond between them. The same is true for atoms sharing electrons. 
-                    The sharing holds the atoms together; it bonds them.
-                </p>
-                <p style="margin-bottom: 30px;">
-                    Sometimes when people share they don't share equally. Maybe one is bigger than the other so they take more. This can make the relationship less stable. 
-                    The same can be said for bonds. Some atoms attract the shared electrons more than others. Usually this makes for bonds that are more reactive.
-                </p>
-                <div style="width: 100%; height: 53%;">
-                    <h6>Animation: Two people sharing soda?</h6>
-                    <div class="hover-container">
-                        <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png"  style="height:250px; cursor: pointer;" @click="playVideo('overlay'); playVideo('media1')" >
-                    </div>
-                </div>
-            </div>
-            <div class="page" id="page">
-                <p style="margin-bottom: 30px;">
-                    We could take this analogy further. If the one of the people is much larger than the other they could take the drink entirely for themselves. 
-                    This can actually make a strong bond too since the smaller person will be after the larger one to try to get some of the drink too. This is like an ionic bond.
-                </p>
-                <div style="display: flex; justify-content: space-evenly; background-color: aliceblue;">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda.png" style="width:45%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media3')">
-                    <img src="@/assets/Unit1-ScreenshotOfTwoPeopleSharingSoda2.png" style="width:45%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media4')">
-                </div>
-                <p style="margin-top: 30px;">
-                    It is possible for two atoms to share more electrons with each other, always in pairs. 
-                    We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
-                    shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
-                    for 6 total). Since for every bond the atom gets an extra electron and each atom wants to 
-                    get a total of 8 valence electrons, 
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
-                    valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
-                </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 100%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
-                <p>
-                    Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
-                    it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
-                    two electrons on each side of the square but start with one electron per side and only pair 
-                    them up when we have more than 4 valence electrons. The dot structures show us how we can connect 
-                    atoms to make molecules. Every where we have a single electron on a side we can make a bond to another 
-                    atom. When all the atoms have all their single electrons used up the molecule is complete. Usually we 
-                    represent a bond with a line between the two atoms. A line represents a bond, which is a sharing of 
-                    two electrons. On sides where there are two electrons we don’t make a bond. Those electrons are not shared. 
-                    Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p><strong>Representing structures</strong></p>
-                <p>
-                    There are multiple ways that chemists represent a molecule. We saw the Lewis dot structure or Lewis Structure 
-                    (with lines for bonds). Of course, we can also just write a molecular formula. The molecular formula simply 
-                    lists the types of atoms present and the number of each kind of atom. We always list the atoms in the order 
-                    of C then H then any other atoms in alphabetical order. This is because all organic molecules contain C and 
-                    almost all contain H, but they don’t necessarily have other elements and usually fewer of them. The molecular 
-                    formula contains less information than the Lewis structure. It tells us how many of each kind of atom but not 
-                    how they are connected. It has the advantage of being easier to write and 
-                    is useful for things like stoichiometry, but not very useful for understanding physical and chemical properties of the compound.                    
-                </p>
-                <p>
-                    The Lewis Structure tells us a lot about how the molecule is put together, but when we start working with larger 
-                    molecules, let's say with 8 or more carbon atoms, it becomes cumbersome to write out every atom and every bond. 
-                </p>
-                <p>
-                    So chemists have developed ways of writing less while still representing how the atoms are connected. One of 
-                    these ways is the condensed structure.
-                </p>
-                <p>
-                    None of these ways of representing the molecule (molecular formula, Lewis structure, condensed structure) are completely 
-                    accurate representations. While
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p style="text-indent: 0%;">
-                    the Lewis and condensed structures show us how the atoms are connected, they don’t 
-                    adequately represent the three-dimensional nature of the molecules, as we saw in the video. One of the skills we need to 
-                    develop is translating between the actual three dimensional molecule and the two-dimensional representations we are forced 
-                    to use because of the nature of the paper, computer screens, white boards, and other media we use to communicate. We will 
-                    want to use videos like this along with other 3D representations to help us learn to make this 3D to 2D connection. You 
-                    should also use your model kit to help with this. Ultimately, we want to be able to see the 2D representation but have a 
-                    mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
-                </p>
             </div>
             <div class="page" id="page">
             </div>
