@@ -9,10 +9,10 @@
     -->
     <div class="container" id="container" @keyup="created">
         <div class="nav-buttons">
-            <button @click="previous" class="control" style="font-size: 90px;">
+            <button @click="previous" class="control">
                 <
             </button>
-            <button @click="next" class="control" style="font-size: 90px;">
+            <button @click="next" class="control">
                 >
             </button>
         </div>
@@ -348,8 +348,8 @@ nav a.router-link-exact-active {
     justify-content: center;
     justify-self: center;
     border-radius: 35px;
-    right: 53px;
-    bottom: 25px;
+    right: 3.5%;
+    bottom: 5%;
 }
 
 .control {
@@ -362,6 +362,7 @@ nav a.router-link-exact-active {
     height: 70px;
     color: yellow ;
     border: none;
+    font-size: 90px;
 }
 
 .nav-buttons :hover {
@@ -488,6 +489,12 @@ nav a.router-link-exact-active {
     }
     .container {
         min-width: 85.3vw;
+    }
+    .control {
+        font-size: 70px;
+    }
+    .nav-buttons {
+        width: 100px;
     }
 }
 @media screen and (orientation:portrait) {
