@@ -240,12 +240,16 @@
                 <img class="excercise" src="@/assets/Unit1CondensedToLewis.webp" @click="playVideo('overlay'); playVideo('media9')">
             </div>
             <div class="page" id="page">
-                <p style="margin-bottom: 30px;"><strong>Wrap-up</strong></p>
+                <p style="margin-bottom: 10px;"><strong>Wrap-up</strong></p>
                 <p class="wrap-up-head">Review It</p>
                 <p class="wrap-up-content">Take a look at the learning goals you had for this unit. Did you achieve them?</p>
-                <p class="wrap-up-content">Write a few sentences summarizing this unit. What do you think are the main points? What skills were introduced that you need to develop?</p>
+                <textarea class="ex-answer" placeholder="Enter your answer here"/>
+                <p class="wrap-up-content">Write a few sentences summarizing this unit. What do you think are the main points? What skills were introduced 
+                    that you need to develop?</p>
+                <textarea class="ex-answer" placeholder="Enter your answer here"/>
                 <p class="wrap-up-head">Evaluate It</p>
                 <p class="wrap-up-content">What do you think of the learning goals you wrote for this unit? Rewrite them if you think they could be improved.</p>
+                <textarea class="ex-answer" placeholder="Enter your answer here"/>
                 <p class="wrap-up-head">
                     Prove It
                 </p class="wrap-up-content">
@@ -611,6 +615,12 @@ nav a.router-link-exact-active {
     height:10%;
 }
 
+.ex-answer {
+    margin: 0% 4% !important;
+    width:95% !important;
+    height:7% !important;
+}
+
 .progress-container {
   width: 120%;
   height: 1%;
@@ -640,7 +650,7 @@ nav a.router-link-exact-active {
 
 .wrap-up-content {
     margin-top: 0% !important;
-    margin-bottom: 50px !important
+
 }
 
 .excercise {
