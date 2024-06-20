@@ -349,7 +349,7 @@ nav a.router-link-exact-active {
     justify-self: center;
     border-radius: 35px;
     right: 53px;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 .control {

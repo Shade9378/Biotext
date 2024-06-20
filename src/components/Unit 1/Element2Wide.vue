@@ -111,6 +111,8 @@
                     Since organic chemistry is often defined as the chemistry of carbon compounds, carbon will be central to our studies. Other elements commonly found in organic compounds are 
                     hydrogen, oxygen, nitrogen, and the halogens (fluorine, chlorine, bromine, and iodine). We will also occasionally see sulfur and phosphorous.
                 </p>
+                <p>These elements follow specific patterns when they make covalent bonds with each other.
+                    For reasons we will understand more fully later, the elements</p>
             </div>
             <div class="page" id="page">
                 <div style="display: flex; justify-content: center; margin: 30px; background: none" @click="playVideo('overlay'); playVideo('media2')">
@@ -122,8 +124,7 @@
                     </div>
                 </div>
                 <p>
-                    These elements follow specific patterns when they make covalent bonds with each other.
-                    For reasons we will understand more fully later, the elements we will be working with 
+                    we will be working with 
                     (except for H) want to have 8 valence electrons (electrons potentially able to make bonds). 
                     Hydrogen wants to have 2 valence electrons. 
                 </p>
@@ -132,12 +133,11 @@
                     The periodic table tells us (the numbers at the top of the columns) how many electrons each atom starts with. 
                     To get more electrons the atoms share with other atoms to make covalent bonds. 
                     One electron shared from each atom makes a bond between the atoms. So every covalent 
+                    bond is two electrons shared between two atoms. By sharing the electrons it is like both atoms have one
+                     more electron than they started with.
                 </p>
             </div>
             <div class="page" id="page">
-                <p>
-                    bond is two electrons shared between two atoms. By sharing the electrons it is like both atoms have one more electron than they started with.
-                </p>
                 <p>
                     Covalent bonding is like two people sharing a drink. Sharing creates a bond between them. The same is true for atoms sharing electrons. 
                     The sharing holds the atoms together; it bonds them.
@@ -167,12 +167,12 @@
                     We will see single bonds (1 electron shared from each atom), double bonds (2 electrons 
                     shared from each atom for 4 total), and triple bonds (3 electrons shared from each atom 
                     for 6 total). Since for every bond the atom gets an extra electron and each atom wants to 
-                    get a total of 8 valence electrons, 
+                    get a total of 8 valence electrons, the number of bonds each atom makes is 8 minus the number of 
+                    valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
                 </p>
             </div>
             <div class="page" id="page">
-                <p style="text-indent: 0%;">the number of bonds each atom makes is 8 minus the number of 
-                    valence electrons it starts with (from the periodic table). Hydrogen makes 1 bond.
+                <p style="text-indent: 0%;">
                 </p>
                 <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
                 <p>
@@ -182,15 +182,12 @@
                     them up when we have more than 4 valence electrons. The dot structures show us how we can connect 
                     atoms to make molecules. Every where we have a single electron on a side we can make a bond to another 
                     atom. When all the atoms have all their single electrons used up the molecule is complete. Usually we 
-                    represent a bond with a line between the two
-                </p>
-            </div>
-            <div class="page" id="page">
-                <p>
-                    atoms. A line represents a bond, which is a sharing of two electrons. On
+                    represent a bond with a line between the two  atoms. A line represents a bond, which is a sharing of two electrons. On
                     sides where there are two electrons we don’t make a bond. Those electrons are not shared. 
                     Sometimes they are referred to as non-bonding electrons or as “lone pairs.”
                 </p>
+            </div>
+            <div class="page" id="page">
                 <p><strong>Representing structures</strong></p>
                 <p>
                     There are multiple ways that chemists represent a molecule. We saw the Lewis dot structure or Lewis Structure 
@@ -202,14 +199,17 @@
                     how they are connected. It has the advantage of being easier to write and 
                     is useful for things like stoichiometry, but not very useful for understanding physical and chemical properties of the compound.                    
                 </p>
-            </div>
-            <div class="page" id="page">
                 <p>
                     The Lewis Structure tells us a lot about how the molecule is put together, but when we start working with larger 
                     molecules, let's say with 8 or more carbon atoms, it becomes cumbersome to write out every atom and every bond. 
                 </p>
                 <p>
-                    So chemists have developed ways of writing less while still representing how the atoms are connected. One of 
+                    So chemists have developed ways of writing less while still representing 
+                </p>
+            </div>
+            <div class="page" id="page">
+                <p style="text-indent: 0%;">
+                    how the atoms are connected. One of 
                     these ways is the condensed structure.
                 </p>
                 <p>
@@ -219,18 +219,15 @@
                     develop is translating between the actual three dimensional molecule and the two-dimensional representations we are forced 
                     to use because of the nature of the paper, computer screens, white boards, and other media we use to communicate. We will 
                     want to use videos like this along with other 3D representations to help us learn to make this 3D to 2D connection. You 
-                    should also use your model kit to
+                    should also use your model kit to help with this. Ultimately, we want to be able to see the 2D representation but have a 
+                    mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
                 </p>
             </div>
             <div class="page" id="page">
-                <p>
-                    help with this. Ultimately, we want to be able to see the 2D representation but have a 
-                    mental image of the 3D molecule. Understanding the 3D nature of these molecules is important for fully understanding their chemistry.
-                </p>
                 <p><strong>Now you try</strong></p>
                 <p>Write Lewis dot structures for the following compounds.</p>
                 <img class="excercise" src="@/assets/Unit1LewisDot (1).webp" @click="playVideo('overlay'); playVideo('media6')">
-                <p style="margin-bottom: 10%;">Now write the structures with lines to represent the sharing of two electrons (bonds).</p>
+                <p style="margin-bottom: 20%;">Now write the structures with lines to represent the sharing of two electrons (bonds).</p>
                 <p>Identify which atoms below do not have the normal number of bonds.</p>
                 <img class="excercise" src="@/assets/Unit1NumberOfBonds.webp" @click="playVideo('overlay'); playVideo('media7')">
             </div>
@@ -523,7 +520,7 @@ nav a.router-link-exact-active {
     justify-self: center;
     border-radius: 35px;
     right: 53px;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 .control {
