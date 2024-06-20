@@ -70,13 +70,15 @@
                 </p>
             </div>
             <div class="page" id="page">
-                <div>
+                <div style="display: flex; flex-direction: column; min-height: 10vh;">
                     <p>
                         Deena did a podcast describing her motivation for her research:
                     </p>
-                    <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
-                    <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
-                    width="70%"></iframe>
+                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                         <img src="@/assets/Unit1-DeenaWalker.jpg" style="float:left; max-width:20%">
+                        <iframe frameBorder="0" scrolling="no" src="https://playlist.megaphone.fm/?e=PPY5510118240"
+                        width="70%"></iframe>
+                    </div>
                     <p style="margin: 10px;">
                         When anxiety begins to overtake her, biology student Deena Walker begins to worry she'll end up just like her mentally ill sister.
                     </p>
@@ -521,7 +523,7 @@ nav a.router-link-exact-active {
     justify-self: center;
     border-radius: 35px;
     right: 53px;
-    bottom: -13px;
+    bottom: 20px;
 }
 
 .control {
@@ -541,7 +543,7 @@ nav a.router-link-exact-active {
 }
 
 #slide {
-  height: 85vh;
+  height: 80vh;
   width: 120%;
   display: flex;
   overflow: hidden;
@@ -551,7 +553,7 @@ nav a.router-link-exact-active {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
   margin: 0;
   max-width: 81vw;
@@ -600,8 +602,8 @@ nav a.router-link-exact-active {
 }
 
 #slide > div > div > p {
-    margin: 12.5px;
-    font-size: 2vh;
+    text-indent: 0%;
+    font-size: 1.5vh;
     font-family: "League Spartan",sans-serif;
     text-align: justify;
 }
@@ -629,7 +631,7 @@ nav a.router-link-exact-active {
 
 #slide > .page > p {
     margin: 12.5px;
-    font-size: 2.7vh;
+    font-size: 2.5vh;
     font-family:"League Spartan",sans-serif;
     text-align: justify;
 }

@@ -27,14 +27,6 @@
             <source src="" type="video/mp4" showControl>
         </video>
 
-        <img id="media2" class="media" width="80%" src="">
-
-        <img id="media3" class="media" width="40%" src="">​
-
-        <img id="media4" class="media" width="40%" src="">
-
-        <img id="media5" class="media" width="80%" src="">
-
         <p class="title">
             Unit 2. More Structural Representations and Isomers
         </p>
@@ -142,13 +134,13 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 3 : totalWidth / 1; //1 because the current slide has 4 pages. (4/2 = 2, 2-1=1)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 11 : totalWidth / 5; //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
 
         previous() {
-            if(this.count <= 2 && this.count > 0){ //2 because the current slide has 10 pages
+            if(this.count <= 12 && this.count > 0){ //12 because the current slide has 12 pages
                 this.count--
             }
             this.scroll("previous")
@@ -156,7 +148,7 @@ export default{
         },
 
         next() {
-            if(this.count < 2 && this.count >= 0){ //2 because the current slide has 10 pages
+            if(this.count < 12 && this.count >= 0){ //12 because the current slide has 12 pages
                 this.count++
             }
             this.scroll("next")
@@ -263,7 +255,6 @@ export default{
                 }
             }
         },
-
         handleKeydown (e) {
     	    switch (e.which) {
                 case 37:
@@ -331,14 +322,13 @@ nav a.router-link-exact-active {
   display:none;
 }
 
-.media
-{
+.media {
     position: absolute;
-    top: 20%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    top: 15%;
+    bottom: 0;
+    margin: auto;
     color:white;
     cursor: pointer;
     display:none;
@@ -359,7 +349,7 @@ nav a.router-link-exact-active {
     justify-self: center;
     border-radius: 35px;
     right: 53px;
-    bottom: -13px;
+    bottom: 20px;
 }
 
 .control {
@@ -379,7 +369,7 @@ nav a.router-link-exact-active {
 }
 
 #slide {
-  height: 85vh;
+  height: 80vh;
   width: 120%;
   display: flex;
   overflow: hidden;
@@ -389,7 +379,7 @@ nav a.router-link-exact-active {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
   margin: 0;
   max-width: 81vw;
@@ -467,9 +457,25 @@ nav a.router-link-exact-active {
 
 #slide > .page > p {
     margin: 12.5px;
-    font-size: 2.7vh;
+    font-size: 2.45vh;
     font-family:"League Spartan",sans-serif;
     text-align: justify;
+}
+
+.wrap-up-head {
+    font-style: italic; 
+    margin-bottom: 0% !important;
+}
+
+.wrap-up-content {
+    margin-top: 0% !important;
+    margin-bottom: 50px !important
+}
+
+.excercise {
+    margin:30px auto; 
+    min-width: 90%; 
+    cursor: pointer;
 }
 
 /*** Media Quiries for Width ***/

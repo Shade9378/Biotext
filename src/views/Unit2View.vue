@@ -6,7 +6,7 @@
     <div class="sizeButtons">
       <button @click="changeToWide()">+</button>
       <button @click="changeToNarrow()">-</button>
-    </div>  test
+    </div>
     -->
     <Element2Wide/>
   </div>
@@ -54,7 +54,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height:100vh;
+  height:95vh;
 }
 
 </style>
