@@ -286,8 +286,7 @@ export default {
                 case 39: 
                 self.next()// right
                 break;
-            }
-            e.preventDefault(); // prevent the default action (scroll / move caret)
+            } // prevent the default action (scroll / move caret)
         };
     },
     
@@ -561,6 +560,7 @@ nav a.router-link-exact-active {
 }
 
 #slide > div {
+  padding: 2%;
   min-width: 50%;
   height: 100%;
   min-height: 400px;

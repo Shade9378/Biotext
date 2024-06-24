@@ -97,6 +97,46 @@ export default{
 </script>
 
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background-color: rgb(72, 72, 72);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+header{
+  background-color: rgb(255, 255, 130);
+}
+
+nav{
+  margin-left:5%;
+  display: flex;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+/* RouterLink */
+.overlay{
+  position:fixed;
+  background-color: rgba(67, 67, 67, 0.6);
+  width:100%;
+  height:100%;
+  color:white;
+  cursor: pointer;
+  display:none;
+}
+
 h3 {
   margin: 3vw;
   font-size: 200% !important;

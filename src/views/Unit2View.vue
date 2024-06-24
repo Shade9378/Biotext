@@ -15,30 +15,12 @@
 <script>
 // @ is an alias to /src
 import Element2Wide from '@/components/Unit 2/Element2Wide.vue'
-import Element3Narrow from '@/components/Unit 2/Element3Narrow.vue'
 
 export default { 
-  name: 'Unit1View',
+  name: 'Unit2View',
   components: {
     Element2Wide,
   },
-  data(){
-    return{
-      narrow: false,
-      wide: true
-    }
-  },
-
-  methods:{
-    changeToWide(){
-      this.wide = true;
-      this.narrow = false;
-    },
-    changeToNarrow(){
-      this.wide=false;
-      this.narrow=true;
-    }
-  }
 }
 </script>
 

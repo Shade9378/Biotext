@@ -385,6 +385,7 @@ nav a.router-link-exact-active {
 }
 
 #slide > div {
+  padding: 2%;
   min-width: 50%;
   height: 100%;
   min-height: 400px;
