@@ -100,8 +100,21 @@ export default{
         }
     },
     created(){
+        var self = this;
         //var slide = setInterval(()=>this.slideLoop(this.direction),2000)
         window.addEventListener('scroll', this.handleScroll);
+        document.onkeydown = function(e) {
+            switch(e.which) {
+                case 37: 
+                self.previous()// left
+                break;
+
+                case 39: 
+                self.next()// right
+                break;
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        };
     },
 
     methods:{
@@ -255,23 +268,6 @@ export default{
                 }
             }
         },
-        handleKeydown (e) {
-    	    switch (e.which) {
-                case 37:
-                    this.next();
-                    break;
-                case 39: 
-                    this.next();
-                    break;
-            }
-        },
-
-        beforeMount () {
-  	        window.addEventListener('keydown', this.handleKeydown, null);
-        },
-        beforeDestroy () {
-  	        window.removeEventListener('keydown', this.handleKeydown);
-        }
     }
 }
 

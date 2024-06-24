@@ -46,8 +46,8 @@
         <p class="title">
             Unit 1. Bonding, Introduction to Structural Representations
         </p>
-        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
-            <div class="page" id="page">
+        <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()" @click="isElementXPercentInViewport">
+            <div class="page" id="page1">
                 <p style="margin-top: 27px;" >
                     Throughout the semester, we will incorporate scientist spotlights highlighting scientists 
                     whose research is related to the topics we are studying and our course theme of neurotransmitters.
@@ -265,8 +265,7 @@
 <script>
 import { TresCanvas } from '@tresjs/core'
 
-export default{
-    
+export default {
     data(){
         return{
             count: 0,
@@ -275,10 +274,23 @@ export default{
         }
     },
     created(){
+        var self = this;
         //var slide = setInterval(()=>this.slideLoop(this.direction),2000)
         window.addEventListener('scroll', this.handleScroll);
-    },
+        document.onkeydown = function(e) {
+            switch(e.which) {
+                case 37: 
+                self.previous()// left
+                break;
 
+                case 39: 
+                self.next()// right
+                break;
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        };
+    },
+    
     methods:{
         ////playVideo() invokes the overlay area that has a video on top of it.
         playVideo(id){
@@ -430,25 +442,9 @@ export default{
                 }
             }
         },
-        handleKeydown (e) {
-    	    switch (e.which) {
-                case 37:
-                    this.next();
-                    break;
-                case 39: 
-                    this.next();
-                    break;
-            }
-        },
-
-        beforeMount () {
-  	        window.addEventListener('keydown', this.handleKeydown, null);
-        },
-        beforeDestroy () {
-  	        window.removeEventListener('keydown', this.handleKeydown);
-        }
-    }
+    },
 }
+
 
 </script>
 
