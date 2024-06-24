@@ -78,8 +78,6 @@
             </div>
             <div class="page" id="page">
             </div>
-            <div class="page" id="page">
-            </div>
         </div>
         <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
@@ -147,13 +145,13 @@ export default{
             //var scrolled = (winScroll / height) * 100;
             //var totalWidth = screen.availWidth;
             var totalWidth = document.getElementById("slide").offsetWidth;
-            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 11 : totalWidth / 5; //5 because the current slide has 12 pages. (12/2 = 6, 6-1=5)
+            var scrolled = (window.screen.width <= window.screen.height) ? totalWidth / 4 : totalWidth / 1; //1 because the current slide has 4 pages. (4/2 = 2, 2-1=1)
             document.getElementById("myBar").style.width = scrolled*this.count + "px";
             console.log(this.count)
         },
 
         previous() {
-            if(this.count <= 12 && this.count > 0){ //12 because the current slide has 12 pages
+            if(this.count <= 4 && this.count > 0){ //4 because the current slide has 4 pages
                 this.count--
             }
             this.scroll("previous")
@@ -161,7 +159,7 @@ export default{
         },
 
         next() {
-            if(this.count < 12 && this.count >= 0){ //12 because the current slide has 12 pages
+            if(this.count < 4 && this.count >= 0){ //4 because the current slide has 4 pages
                 this.count++
             }
             this.scroll("next")
