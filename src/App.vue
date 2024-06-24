@@ -10,8 +10,8 @@
               <ul style="list-style-type: none; padding: 0;">
                 <li><router-link to="/unit1">Unit 1. Bonding, Introduction to Structural Representations</router-link></li>
                 <li><router-link to="/unit2">Unit 2. More Structural Representations and Isomers</router-link></li>
-                <li><router-link to="/">Unit 3. </router-link></li>
-                <li><router-link to="/">Unit 4. </router-link></li>
+                <li><router-link to="/unit3">Unit 3. </router-link></li>
+                <li><router-link to="/unit4">Unit 4. </router-link></li>
                 <li><router-link to="/">Unit 5. </router-link></li>
                 <li><router-link to="/">Unit 6. </router-link></li>
                 <li><router-link to="/">Unit 7. </router-link></li>
