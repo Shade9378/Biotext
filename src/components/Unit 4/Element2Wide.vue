@@ -521,7 +521,7 @@ nav a.router-link-exact-active {
 }
 
 /*** Media Quiries for Width ***/
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) and (orientation:portrait){
     #slide > div { 
         min-width: 100%;
     }
@@ -536,14 +536,6 @@ nav a.router-link-exact-active {
     }
     .nav-buttons {
         width: 100px;
-    }
-}
-@media screen and (orientation:portrait) {
-    #slide > div { 
-        min-width: 100%;
-    }
-    .title {
-        font-size: 150%;
     }
 }
 

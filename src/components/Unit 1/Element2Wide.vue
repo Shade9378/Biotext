@@ -174,7 +174,7 @@
             <div class="page" id="page">
                 <p style="text-indent: 0%;">
                 </p>
-                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px auto; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
+                <img src="@/assets/Unit1-BondSymbolTable.webp" style="margin:30px 25%; width: 50%; cursor: pointer;" @click="playVideo('overlay'); playVideo('media5')">
                 <p>
                     Lewis dot symbols are written by writing the symbol (letter) for each atom then surrounding 
                     it with dots to represent electrons. Imagine the symbol is inside a square. We write up to 
@@ -343,60 +343,42 @@ export default {
 
         scroll(position) {
             let el = document.getElementById("slide");
-            let width = document.getElementById("container").offsetWidth/2;
-            let pos = 0;
-            let id = setInterval(frame, 10);
-            let num = 10 - this.frame //put the total number of pages here
-            //let width = (screen.availWidth-160)*0.5;
-            let resize = num * width
-            let check = position == "reset" ? resize : width 
-            function frame() {
-                if (pos >= check) {
-                    clearInterval(id);
-                }
-                else {
-                    pos += 5;
-                    let leftDirection = 12;
-                    let rightDirection = 12;
-                    /*** if (window.screen.width < 425) {
-                        leftDirection = 9;
-                        rightDirection = 9;
-                    }
-                    else if (window.screen.width < 499) {
-                        leftDirection = 8.7;
-                        rightDirection = 8.2;
-                    }
-                    else if (window.screen.width < 1600) {
-                        leftDirection = 12;
-                        rightDirection = 12;
-                    }
-                    else if (window.screen.width <= 1920) {
-                        leftDirection = 12;
-                        rightDirection = 12;
-                    }
-                    else if (window.screen.width <= 2560){
-                        leftDirection = 14;
-                        rightDirection = 13.5;
+            if ((window.screen.width >= window.screen.height) 
+            && (window.innerWidth > 1300)) {
+                let width = document.getElementById("container").offsetWidth/2;
+                let pos = 0;
+                let id = setInterval(frame, 10);
+                let num = 10 - this.frame //put the total number of pages here
+                //let width = (screen.availWidth-160)*0.5;
+                let resize = num * width
+                let check = position == "reset" ? resize : width 
+                function frame() {
+                    if (pos >= check) {
+                        clearInterval(id);
                     }
                     else {
-                        leftDirection = 18;
-                        rightDirection = 17.5;
-                    } ***/
-                    if(position == 'next'){  
-                        el.scrollLeft +=  leftDirection
-                    }
-                    else{
-                        el.scrollLeft -= rightDirection
+                        pos += 5;
+                        if(position == 'next'){  
+                            el.scrollLeft +=  12;
+                        }
+                        else{
+                            el.scrollLeft -= 12;
+                        }
                     }
                 }
+                console.log(window.innerWidth);
             }
-            
-            console.log(position)
-            console.log(resize)
-            console.log(check)
-            console.log(width);
-            console.log(pos);
-            console.log(document.getElementById("container").offsetWidth/2)
+            else {
+                let page = document.getElementById("page").offsetWidth;
+                let width = window.innerWidth > 600 ? page * 2 : page;
+                if(position == 'next'){  
+                    el.scrollLeft += width;
+                }
+                else{
+                    el.scrollLeft -= width;
+                }
+                
+            }
         },
 
         resetScroll(){
@@ -656,7 +638,7 @@ nav a.router-link-exact-active {
 }
 
 /*** Media Quiries for Width ***/
-@media screen and (max-width: 700px) {
+@media (max-width: 600px) and (orientation:portrait) {
     #slide > div { 
         min-width: 100%;
     }
@@ -671,14 +653,6 @@ nav a.router-link-exact-active {
     }
     .nav-buttons {
         width: 100px;
-    }
-}
-@media screen and (orientation:portrait) {
-    #slide > div { 
-        min-width: 100%;
-    }
-    .title {
-        font-size: 150%;
     }
 }
 
