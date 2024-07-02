@@ -26,6 +26,13 @@
         <video id="media1" class="media" width="80%" controls>
             <source src="" type="video/mp4" showControl>
         </video>
+        <div id="media2" class="media">
+            <div style="position:absolute; top: -30px; width: 100%; height: 100%; background-color: grey;"></div>
+            <iframe style="position: absolute; height: 100%; top: -30px;" frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
+            width="100%" height="100%"></iframe>
+            <button style="position: absolute; right: 0%;" @click="closeVideo('media2')">X</button>
+        </div>
+       
 
         <p class="title">
             Unit 2. More Structural Representations and Isomers
@@ -77,6 +84,14 @@
                 </p>
             </div>
             <div class="page" id="page">
+                <iframe frameBorder="0" scrolling="no" src="https://jefhans4.github.io/IsomerGame/"
+                width="100%" height="100%"></iframe>
+            </div>
+            <div class="page" id="page">
+                <div style="background-color: yellow;">
+                    <div style="color: black;">Insomer Game </div> 
+                    <button style="border-radius: 30%; border: none;" @click="playVideo('media2')">Play</button>
+                </div>
             </div>
         </div>
         <div class="progress-container">
@@ -475,7 +490,7 @@ nav a.router-link-exact-active {
 }
 
 /*** Media Quiries for Width ***/
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) and (orientation:portrait){
     #slide > div { 
         min-width: 100%;
     }
@@ -490,14 +505,6 @@ nav a.router-link-exact-active {
     }
     .nav-buttons {
         width: 100px;
-    }
-}
-@media screen and (orientation:portrait) {
-    #slide > div { 
-        min-width: 100%;
-    }
-    .title {
-        font-size: 150%;
     }
 }
 
